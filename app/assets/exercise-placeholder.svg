@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 180" role="img" aria-label="Exercise illustration unavailable">
+ <rect width="200" height="180" rx="22" fill="#f5eff5"/>
+ <circle cx="100" cy="49" r="16" fill="#b1a3c0"/>
+ <path d="M71 80 Q100 66 129 80 M100 82 V130 M100 94 L65 116 M100 94 L135 116 M100 130 L70 158 M100 130 L130 158" fill="none" stroke="#a798b6" stroke-width="12" stroke-linecap="round"/>
+ <text x="100" y="172" font-size="9" text-anchor="middle" font-family="Arial,sans-serif" fill="#7e718d">Technique cues below</text>
+</svg>

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "app_name": "My Little Gym",
+  "gym": {
+    "name": "Fitness First Leipzig Thomaskirche",
+    "address": "Petersstraße 20, 04109 Leipzig, Germany",
+    "verified_facilities": [
+      "performance_area",
+      "free_weights",
+      "strength_machines",
+      "power_racks",
+      "egym_area",
+      "glute_training_zone",
+      "functional_area"
+    ],
+    "individual_machine_inventory_verified": false
+  },
+  "preferences": {
+    "preferred_weight_unit": "kg",
+    "weekly_session_goal": null,
+    "session_target_minutes": null,
+    "scheduling_mode": "flexible_choose_when_to_train",
+    "enable_optional_rest_timer": true,
+    "language": "en",
+    "dark_mode": false
+  },
+  "suggested_not_mandatory_defaults": {
+    "weekly_sessions": 4,
+    "typical_session_minutes": 45,
+    "activation_duration_weeks": 4
+  },
+  "schedule_behavior": {
+    "require_named_weekdays": false,
+    "require_all_categories_active": false,
+    "auto_replace_expired_routines": false,
+    "allow_repeat_same_routine": true,
+    "allow_extra_ad_hoc_sessions": true
+  },
+  "training_emphasis": "Glutes instead of calf emphasis on initial leg routines"
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "id": "chest",
+    "display_name": "Chest",
+    "color": "#F7DFE8",
+    "sort_order": 1
+  },
+  {
+    "id": "legs",
+    "display_name": "Legs",
+    "color": "#E2F0DE",
+    "sort_order": 2
+  },
+  {
+    "id": "back",
+    "display_name": "Back",
+    "color": "#E5E9FA",
+    "sort_order": 3
+  },
+  {
+    "id": "arms_shoulders",
+    "display_name": "Arms & Shoulders",
+    "color": "#FFEBD3",
+    "sort_order": 4
+  }
+]

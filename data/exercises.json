@@ -1,0 +1,1249 @@
+[
+  {
+    "id": "chest_press_machine",
+    "name": "Chest press machine",
+    "name_de": "Brustpresse",
+    "primary_muscles": [
+      "chest",
+      "triceps"
+    ],
+    "equipment": "chest press machine",
+    "level": "beginner",
+    "instructions": [
+      "Adjust the seat so handles sit around mid-chest.",
+      "Press smoothly while keeping shoulders supported; return under control."
+    ],
+    "alternative_exercise_ids": [
+      "flat_dumbbell_press"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "incline_dumbbell_press",
+    "name": "Incline dumbbell press",
+    "name_de": "Schrägbankdrücken mit Kurzhanteln",
+    "primary_muscles": [
+      "chest",
+      "front_delts",
+      "triceps"
+    ],
+    "equipment": "incline bench + dumbbells",
+    "level": "beginner",
+    "instructions": [
+      "Use a moderate bench incline and stable feet.",
+      "Lower dumbbells in control and press upward without bouncing."
+    ],
+    "alternative_exercise_ids": [
+      "chest_press_machine"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "per_dumbbell"
+    }
+  },
+  {
+    "id": "pec_deck",
+    "name": "Pec deck fly",
+    "name_de": "Butterfly-Maschine",
+    "primary_muscles": [
+      "chest"
+    ],
+    "equipment": "pec deck machine",
+    "level": "beginner",
+    "instructions": [
+      "Set the seat so arms move at chest height.",
+      "Bring arms together without shrugging; return slowly."
+    ],
+    "alternative_exercise_ids": [
+      "cable_fly"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "cable_fly",
+    "name": "Cable chest fly",
+    "name_de": "Kabelzug-Flys",
+    "primary_muscles": [
+      "chest"
+    ],
+    "equipment": "cable station",
+    "level": "beginner",
+    "instructions": [
+      "Stand stable with a soft elbow bend.",
+      "Bring hands together in a smooth arc; do not overstretch shoulders."
+    ],
+    "alternative_exercise_ids": [
+      "pec_deck"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "low_to_high_cable_fly",
+    "name": "Low-to-high cable fly",
+    "name_de": "Kabelzug-Flys von unten nach oben",
+    "primary_muscles": [
+      "chest"
+    ],
+    "equipment": "cable station",
+    "level": "beginner",
+    "instructions": [
+      "Set handles low and keep a staggered stance.",
+      "Sweep hands upward and inward without arching the lower back."
+    ],
+    "alternative_exercise_ids": [
+      "cable_fly"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "flat_dumbbell_press",
+    "name": "Flat dumbbell bench press",
+    "name_de": "Flachbankdrücken mit Kurzhanteln",
+    "primary_muscles": [
+      "chest",
+      "triceps"
+    ],
+    "equipment": "flat bench + dumbbells",
+    "level": "beginner",
+    "instructions": [
+      "Keep feet stable and shoulder blades supported.",
+      "Lower weights in control; press without clashing dumbbells."
+    ],
+    "alternative_exercise_ids": [
+      "chest_press_machine"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "per_dumbbell"
+    }
+  },
+  {
+    "id": "push_up",
+    "name": "Push-up",
+    "name_de": "Liegestütz",
+    "primary_muscles": [
+      "chest",
+      "triceps"
+    ],
+    "equipment": "bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Keep a straight line from head to heels or knees.",
+      "Lower under control and push away without sagging hips."
+    ],
+    "alternative_exercise_ids": [
+      "chest_press_machine"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight"
+    }
+  },
+  {
+    "id": "barbell_bench_press",
+    "name": "Barbell bench press",
+    "name_de": "Bankdrücken mit Langhantel",
+    "primary_muscles": [
+      "chest",
+      "triceps"
+    ],
+    "equipment": "barbell bench + spotter or safeties",
+    "level": "intermediate",
+    "instructions": [
+      "Set up stable feet and shoulder blades, and use collars.",
+      "Lower bar with control; use a spotter or safeties when appropriate."
+    ],
+    "alternative_exercise_ids": [
+      "chest_press_machine"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "leg_press",
+    "name": "Leg press machine",
+    "name_de": "Beinpresse",
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "equipment": "leg press machine",
+    "level": "beginner",
+    "instructions": [
+      "Sit with back and hips supported; place feet securely.",
+      "Press without locking knees; lower only while pelvis stays stable."
+    ],
+    "alternative_exercise_ids": [
+      "goblet_squat"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "db_rdl",
+    "name": "Dumbbell Romanian deadlift",
+    "name_de": "Rumänisches Kreuzheben mit Kurzhanteln",
+    "primary_muscles": [
+      "hamstrings",
+      "glutes"
+    ],
+    "equipment": "dumbbells",
+    "level": "intermediate",
+    "instructions": [
+      "With slightly bent knees, hinge hips backward and keep weights close.",
+      "Stand tall through the hips without overextending the back."
+    ],
+    "alternative_exercise_ids": [
+      "seated_leg_curl"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "per_dumbbell"
+    }
+  },
+  {
+    "id": "seated_leg_curl",
+    "name": "Seated leg curl",
+    "name_de": "Sitzender Beinbeuger",
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "equipment": "leg curl machine",
+    "level": "beginner",
+    "instructions": [
+      "Align knee joints with the machine pivot and secure pads.",
+      "Curl smoothly and return slowly without lifting hips."
+    ],
+    "alternative_exercise_ids": [
+      "lying_leg_curl"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "lying_leg_curl",
+    "name": "Lying leg curl",
+    "name_de": "Liegender Beinbeuger",
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "equipment": "lying leg curl machine",
+    "level": "beginner",
+    "instructions": [
+      "Align knees near the pivot; keep pelvis against the pad.",
+      "Bend knees under control; avoid swinging the weight."
+    ],
+    "alternative_exercise_ids": [
+      "seated_leg_curl"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "standing_calf_raise",
+    "name": "Standing calf raise",
+    "name_de": "Wadenheben stehend",
+    "primary_muscles": [
+      "calves"
+    ],
+    "equipment": "calf raise machine or dumbbells",
+    "level": "beginner",
+    "instructions": [
+      "Keep feet planted on the balls of your feet.",
+      "Lift heels steadily, pause briefly, and lower all the way."
+    ],
+    "alternative_exercise_ids": [
+      "seated_calf_raise"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "seated_calf_raise",
+    "name": "Seated calf raise",
+    "name_de": "Wadenheben sitzend",
+    "primary_muscles": [
+      "calves"
+    ],
+    "equipment": "calf raise machine or dumbbells",
+    "level": "beginner",
+    "instructions": [
+      "Sit tall with knees bent and feet supported.",
+      "Lift heels through a controlled range and slowly lower."
+    ],
+    "alternative_exercise_ids": [
+      "standing_calf_raise"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "goblet_squat",
+    "name": "Goblet squat",
+    "name_de": "Goblet Kniebeuge",
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "equipment": "dumbbell",
+    "level": "beginner",
+    "instructions": [
+      "Hold a dumbbell securely at chest level.",
+      "Sit down between the hips, keeping heels grounded and knees tracking toes."
+    ],
+    "alternative_exercise_ids": [
+      "leg_press"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "per_dumbbell"
+    }
+  },
+  {
+    "id": "leg_extension",
+    "name": "Leg extension machine",
+    "name_de": "Beinstrecker",
+    "primary_muscles": [
+      "quads"
+    ],
+    "equipment": "leg extension machine",
+    "level": "beginner",
+    "instructions": [
+      "Align knee joint to the machine pivot and adjust ankle pad.",
+      "Extend knees smoothly; lower under control."
+    ],
+    "alternative_exercise_ids": [
+      "leg_press"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "hip_thrust_machine",
+    "name": "Hip thrust / glute drive machine",
+    "name_de": "Hip-Thrust- / Glute-Drive-Maschine",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "equipment": "hip thrust or glute drive machine",
+    "level": "beginner",
+    "instructions": [
+      "Set padding securely across the hips and keep ribs stacked.",
+      "Drive through feet until hips extend; avoid excessive back arch."
+    ],
+    "alternative_exercise_ids": [
+      "db_hip_thrust"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "db_hip_thrust",
+    "name": "Dumbbell hip thrust",
+    "name_de": "Hip Thrust mit Kurzhantel",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "equipment": "bench + dumbbell",
+    "level": "intermediate",
+    "instructions": [
+      "Rest the upper back securely on a bench and pad the dumbbell at the hips.",
+      "Lift hips through glutes without hyperextending the back."
+    ],
+    "alternative_exercise_ids": [
+      "hip_thrust_machine"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "per_dumbbell"
+    }
+  },
+  {
+    "id": "bulgarian_split_squat",
+    "name": "Bulgarian split squat",
+    "name_de": "Bulgarische Kniebeuge",
+    "primary_muscles": [
+      "quads",
+      "glutes"
+    ],
+    "equipment": "bench + dumbbells",
+    "level": "intermediate",
+    "instructions": [
+      "Place rear foot on a low bench and find a stable stance.",
+      "Bend front knee slowly, keep balance, and drive through the front foot."
+    ],
+    "alternative_exercise_ids": [
+      "goblet_squat"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "per_dumbbell"
+    }
+  },
+  {
+    "id": "lat_pulldown",
+    "name": "Lat pulldown",
+    "name_de": "Latzug",
+    "primary_muscles": [
+      "lats",
+      "upper_back",
+      "biceps"
+    ],
+    "equipment": "lat pulldown machine",
+    "level": "beginner",
+    "instructions": [
+      "Set thigh pad firmly and keep chest comfortably lifted.",
+      "Pull bar toward upper chest while driving elbows down; return smoothly."
+    ],
+    "alternative_exercise_ids": [
+      "assisted_pull_up"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "neutral_grip_pulldown",
+    "name": "Neutral-grip lat pulldown",
+    "name_de": "Latzug Neutralgriff",
+    "primary_muscles": [
+      "lats",
+      "biceps"
+    ],
+    "equipment": "lat pulldown machine with neutral grip",
+    "level": "beginner",
+    "instructions": [
+      "Take a palms-facing grip and steady the torso.",
+      "Pull elbows toward the ribs; avoid leaning backward excessively."
+    ],
+    "alternative_exercise_ids": [
+      "lat_pulldown"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "chest_supported_machine_row",
+    "name": "Chest-supported machine row",
+    "name_de": "Brustgestütztes Rudern",
+    "primary_muscles": [
+      "upper_back",
+      "lats",
+      "biceps"
+    ],
+    "equipment": "chest-supported row machine",
+    "level": "beginner",
+    "instructions": [
+      "Adjust chest pad and reach for handles without rounding excessively.",
+      "Pull elbows backward; return with control and without jerking."
+    ],
+    "alternative_exercise_ids": [
+      "seated_cable_row"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "seated_cable_row",
+    "name": "Seated cable row",
+    "name_de": "Rudern am Kabelzug sitzend",
+    "primary_muscles": [
+      "upper_back",
+      "lats",
+      "biceps"
+    ],
+    "equipment": "cable row station",
+    "level": "beginner",
+    "instructions": [
+      "Sit tall with stable feet and a slight knee bend.",
+      "Draw handle toward the torso without rocking backward; return slowly."
+    ],
+    "alternative_exercise_ids": [
+      "chest_supported_machine_row"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "reverse_pec_deck",
+    "name": "Reverse pec deck / rear delt fly",
+    "name_de": "Reverse Butterfly",
+    "primary_muscles": [
+      "rear_delts",
+      "upper_back"
+    ],
+    "equipment": "reverse pec deck machine",
+    "level": "beginner",
+    "instructions": [
+      "Set seat so hands align with shoulders.",
+      "Open arms to the sides while keeping neck relaxed; return slowly."
+    ],
+    "alternative_exercise_ids": [
+      "face_pull"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "single_arm_dumbbell_row",
+    "name": "Single-arm dumbbell row",
+    "name_de": "Einarmiges Kurzhantelrudern",
+    "primary_muscles": [
+      "lats",
+      "upper_back",
+      "biceps"
+    ],
+    "equipment": "bench + dumbbell",
+    "level": "beginner",
+    "instructions": [
+      "Support the body with one hand and keep the spine stable.",
+      "Pull dumbbell toward hip without twisting; lower under control."
+    ],
+    "alternative_exercise_ids": [
+      "seated_cable_row"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "per_dumbbell"
+    }
+  },
+  {
+    "id": "straight_arm_cable_pulldown",
+    "name": "Straight-arm cable pulldown",
+    "name_de": "Kabelzug Pullover mit gestreckten Armen",
+    "primary_muscles": [
+      "lats"
+    ],
+    "equipment": "high cable station",
+    "level": "beginner",
+    "instructions": [
+      "Set a stable stance with slight elbow bend.",
+      "Pull handle toward thighs using shoulders and lats; avoid swinging."
+    ],
+    "alternative_exercise_ids": [
+      "lat_pulldown"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "one_arm_cable_row",
+    "name": "One-arm cable row",
+    "name_de": "Einarmiges Kabelrudern",
+    "primary_muscles": [
+      "upper_back",
+      "lats"
+    ],
+    "equipment": "cable station",
+    "level": "beginner",
+    "instructions": [
+      "Stand or sit steady and keep torso square.",
+      "Pull the elbow back without rotating the trunk; return slowly."
+    ],
+    "alternative_exercise_ids": [
+      "single_arm_dumbbell_row"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "back_extension",
+    "name": "Back extension",
+    "name_de": "Rückenstrecker",
+    "primary_muscles": [
+      "lower_back",
+      "glutes",
+      "hamstrings"
+    ],
+    "equipment": "back-extension station",
+    "level": "beginner",
+    "instructions": [
+      "Adjust support below the hips and brace the torso.",
+      "Hinge forward within comfort and rise to a neutral straight line."
+    ],
+    "alternative_exercise_ids": [
+      "db_rdl"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "assisted_pull_up",
+    "name": "Assisted pull-up machine",
+    "name_de": "Klimmzugmaschine mit Unterstützung",
+    "primary_muscles": [
+      "lats",
+      "biceps",
+      "upper_back"
+    ],
+    "equipment": "assisted pull-up machine",
+    "level": "beginner",
+    "instructions": [
+      "Select enough assistance to move smoothly.",
+      "Pull chest toward handles and lower with control; never drop."
+    ],
+    "alternative_exercise_ids": [
+      "lat_pulldown"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "assistance"
+    }
+  },
+  {
+    "id": "face_pull",
+    "name": "Cable face pull",
+    "name_de": "Face Pull am Kabelzug",
+    "primary_muscles": [
+      "rear_delts",
+      "upper_back"
+    ],
+    "equipment": "high cable station",
+    "level": "beginner",
+    "instructions": [
+      "Pull a rope toward eye level with elbows high but comfortable.",
+      "Keep shoulders down and resist shrugging; return slowly."
+    ],
+    "alternative_exercise_ids": [
+      "reverse_pec_deck"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "machine_shoulder_press",
+    "name": "Shoulder press machine",
+    "name_de": "Schulterpresse",
+    "primary_muscles": [
+      "shoulders",
+      "triceps"
+    ],
+    "equipment": "shoulder press machine",
+    "level": "beginner",
+    "instructions": [
+      "Set seat so handles begin near shoulder height.",
+      "Press up without over-arching lower back; lower in control."
+    ],
+    "alternative_exercise_ids": [
+      "db_shoulder_press"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "db_lateral_raise",
+    "name": "Dumbbell lateral raise",
+    "name_de": "Seitheben mit Kurzhanteln",
+    "primary_muscles": [
+      "side_delts"
+    ],
+    "equipment": "dumbbells",
+    "level": "beginner",
+    "instructions": [
+      "With soft elbows, lift arms out to shoulder level or comfortable range.",
+      "Avoid swinging and lower slowly."
+    ],
+    "alternative_exercise_ids": [
+      "lateral_raise_machine"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "per_dumbbell"
+    }
+  },
+  {
+    "id": "rope_triceps_pressdown",
+    "name": "Rope triceps pushdown",
+    "name_de": "Trizepsdrücken am Kabelzug",
+    "primary_muscles": [
+      "triceps"
+    ],
+    "equipment": "high cable station",
+    "level": "beginner",
+    "instructions": [
+      "Keep upper arms close to the ribs.",
+      "Extend elbows without leaning your body onto the cable; return slowly."
+    ],
+    "alternative_exercise_ids": [
+      "machine_triceps_extension"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "db_hammer_curl",
+    "name": "Dumbbell hammer curl",
+    "name_de": "Hammer-Curls",
+    "primary_muscles": [
+      "biceps",
+      "brachialis"
+    ],
+    "equipment": "dumbbells",
+    "level": "beginner",
+    "instructions": [
+      "Stand stable with palms facing inward.",
+      "Curl elbows without swinging torso and lower in control."
+    ],
+    "alternative_exercise_ids": [
+      "machine_biceps_curl"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "per_dumbbell"
+    }
+  },
+  {
+    "id": "db_shoulder_press",
+    "name": "Dumbbell shoulder press",
+    "name_de": "Schulterdrücken mit Kurzhanteln",
+    "primary_muscles": [
+      "shoulders",
+      "triceps"
+    ],
+    "equipment": "dumbbells + bench",
+    "level": "beginner",
+    "instructions": [
+      "Sit supported and begin weights near shoulder level.",
+      "Press overhead without shrugging or excessive back arch."
+    ],
+    "alternative_exercise_ids": [
+      "machine_shoulder_press"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "per_dumbbell"
+    }
+  },
+  {
+    "id": "ez_bar_curl",
+    "name": "EZ-bar biceps curl",
+    "name_de": "Bizepscurls mit SZ-Stange",
+    "primary_muscles": [
+      "biceps"
+    ],
+    "equipment": "EZ curl bar",
+    "level": "beginner",
+    "instructions": [
+      "Keep upper arms near the sides and wrists comfortable.",
+      "Curl without rocking the torso; lower smoothly."
+    ],
+    "alternative_exercise_ids": [
+      "cable_biceps_curl"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "lateral_raise_machine",
+    "name": "Lateral raise machine",
+    "name_de": "Seitheben Maschine",
+    "primary_muscles": [
+      "side_delts"
+    ],
+    "equipment": "lateral raise machine",
+    "level": "beginner",
+    "instructions": [
+      "Adjust seat and pads to fit the shoulders.",
+      "Lift arms within a comfortable range without shrugging."
+    ],
+    "alternative_exercise_ids": [
+      "db_lateral_raise"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "cable_overhead_triceps_extension",
+    "name": "Overhead cable triceps extension",
+    "name_de": "Trizepsstrecken über Kopf am Kabelzug",
+    "primary_muscles": [
+      "triceps"
+    ],
+    "equipment": "cable station",
+    "level": "beginner",
+    "instructions": [
+      "Keep upper arms steady and elbows comfortable.",
+      "Extend elbows smoothly; avoid arching the back."
+    ],
+    "alternative_exercise_ids": [
+      "rope_triceps_pressdown"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "cable_biceps_curl",
+    "name": "Cable biceps curl",
+    "name_de": "Bizepscurls am Kabelzug",
+    "primary_muscles": [
+      "biceps"
+    ],
+    "equipment": "cable station",
+    "level": "beginner",
+    "instructions": [
+      "Stand tall with elbows near the torso.",
+      "Curl against cable tension and lower without leaning."
+    ],
+    "alternative_exercise_ids": [
+      "ez_bar_curl"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "cable_lateral_raise",
+    "name": "Cable lateral raise",
+    "name_de": "Seitheben am Kabelzug",
+    "primary_muscles": [
+      "side_delts"
+    ],
+    "equipment": "cable station",
+    "level": "beginner",
+    "instructions": [
+      "Stand stable beside the cable with soft elbow.",
+      "Raise arm to a comfortable shoulder height; lower without twisting."
+    ],
+    "alternative_exercise_ids": [
+      "db_lateral_raise"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "machine_biceps_curl",
+    "name": "Biceps curl machine",
+    "name_de": "Bizepsmaschine",
+    "primary_muscles": [
+      "biceps"
+    ],
+    "equipment": "biceps curl machine",
+    "level": "beginner",
+    "instructions": [
+      "Align elbow with the machine pivot and rest upper arms on pads.",
+      "Curl smoothly; lower without letting shoulders roll."
+    ],
+    "alternative_exercise_ids": [
+      "db_hammer_curl"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "machine_triceps_extension",
+    "name": "Triceps extension machine",
+    "name_de": "Trizepsmaschine",
+    "primary_muscles": [
+      "triceps"
+    ],
+    "equipment": "triceps extension machine",
+    "level": "beginner",
+    "instructions": [
+      "Adjust seat and arm support to your height.",
+      "Extend elbows under control and return slowly."
+    ],
+    "alternative_exercise_ids": [
+      "rope_triceps_pressdown"
+    ],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load"
+    }
+  }
+]

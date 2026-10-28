@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#fff9f5" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Little Gym" />
+  <meta name="description" content="A quiet, personal gym notebook: routines, exercises, sets and progress." />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="apple-touch-icon" href="assets/icon-180.png" />
+  <link rel="icon" href="assets/icon.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="styles.css" />
+  <title>My Little Gym</title>
+</head>
+<body>
+<div class="app-shell">
+  <header class="app-topbar">
+    <div class="brand"><span class="brand-flower" aria-hidden="true">✿</span> MY LITTLE GYM <span class="brand-dot">·</span> <small>LEIPZIG</small></div>
+    <button type="button" class="icon-button" data-action="settings" aria-label="Settings and data backup"><svg viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm8 4-1.6-.7.1-1.8-2-2-.9 1.1-1.8-.6L13 6h-2l-.8 2-1.8.6-.9-1.1-2 2 .1 1.8L4 12l1.6.7-.1 1.8 2 2 .9-1.1 1.8.6.8 2h2l.8-2 1.8-.6.9 1.1 2-2-.1-1.8L20 12Z"/></svg></button>
+  </header>
+  <main id="main" tabindex="-1"><div class="loading"><span class="spinner"></span> Opening your gym notebook…</div></main>
+  <nav class="bottom-nav" aria-label="Main navigation">
+    <button type="button" data-tab="workout" class="nav-item selected"><span class="nav-icon">♧</span><span>Workout</span></button>
+    <button type="button" data-tab="routines" class="nav-item"><span class="nav-icon">▦</span><span>Routines</span></button>
+    <button type="button" data-tab="history" class="nav-item"><span class="nav-icon">◷</span><span>History</span></button>
+  </nav>
+  <div id="toast" role="status" aria-live="polite"></div>
+</div>
+<input id="backup-file" type="file" accept="application/json,.json" hidden />
+<input id="exercise-photo" type="file" accept="image/*" hidden />
+<script type="module" src="app.js"></script>
+</body>
+</html>

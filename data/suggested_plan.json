@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "type": "suggested_selections_not_activated",
+  "message": "Choose any combination of routines; choose activation dates/durations later. No fixed four-day schedule.",
+  "recommended_routine_ids": [
+    "chest-a",
+    "legs-a",
+    "back-a",
+    "arms_shoulders-a"
+  ],
+  "scheduled_activations": [],
+  "workout_sessions": []
+}
