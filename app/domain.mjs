@@ -92,9 +92,9 @@ export function createSession(state, routineId, today = localDate()) {
     const ex = state.exercises.find(e=>e.id===slot.exercise_id);
     if (!ex) throw new Error(`Exercise ${slot.exercise_id} missing`);
     return {id:uid('entry'),exercise_id:ex.id,exercise_name:ex.name,exercise_equipment:ex.equipment,
-      exercise_load_kind:ex.logging?.load_kind||'machine_or_total_load',
+      exercise_load_kind:ex.logging?.load_kind||'machine_or_total_load', exercise_mode:ex.logging?.mode||'reps',
       slot_snapshot:deepClone(slot), order:index, skipped:false,
-      sets:Array.from({length:slot.sets},(_,i)=>({id:uid('set'),number:i+1,weight_kg:null,reps:null,done:false,completed_at:null}))};
+      sets:Array.from({length:slot.sets},(_,i)=>({id:uid('set'),number:i+1,weight_kg:null,reps:null,duration_seconds:null,done:false,completed_at:null}))};
   };
   const session = {id:uid('session'),status:'in_progress',routine_id:routine.id,routine_revision:routine.revision||1,
     routine_name:routine.name,category_id:routine.category_id,category_name:category?.display_name||'Custom',

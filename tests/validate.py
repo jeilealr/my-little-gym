@@ -27,9 +27,10 @@ def validate():
     check(len(ids(categories))==len(set(ids(categories))), 'Duplicate category ID')
     check(len(ids(exercises))==len(set(ids(exercises))), 'Duplicate exercise ID')
     check(len(ids(routines))==len(set(ids(routines))), 'Duplicate routine ID')
-    check(len(categories)==4,'Seed should contain four categories')
-    check(len(routines)==20,'Seed should contain five routines per four categories')
-    check(len(exercises)>=30,'Seed exercise library unexpectedly small')
+    check(len(categories)==15,'Seed should contain fifteen categories')
+    check(len(routines)==75,'Seed should contain five routines per fifteen categories')
+    check(len(load('catalog-v1-fingerprints.json')['routines'])==20,'Legacy migration fingerprints not preserved')
+    check(len(exercises)>=100,'Seed exercise library unexpectedly small')
     check(set(r['category_id'] for r in routines)==set(ids(categories)),'Routines refer to wrong categories')
 
     catcounts=Counter(r['category_id'] for r in routines)
@@ -43,7 +44,7 @@ def validate():
     for ex in exercises:
         eid=ex['id']
         check(bool(ex.get('name')) and bool(ex.get('name_de')),f'{eid}: names are missing')
-        check(bool(ex.get('instructions')) and len(ex['instructions'])==2,f'{eid}: two cues needed')
+        check(bool(ex.get('instructions')) and 2<=len(ex['instructions'])<=5,f'{eid}: 2–5 technique cues needed')
         check(bool(ex.get('primary_muscles')),f'{eid}: missing muscle targets')
         check(ex['media']['status']=='pending_licensing_and_anatomy_review',f'{eid}: media should not claim approved')
         check(not ex['media']['start_image'] and not ex['media']['end_image'],f'{eid}: unknown image URL')
@@ -63,7 +64,8 @@ def validate():
             check(1 <= s['sets'] <= 5, f'{rid}: invalid number of working sets')
             check(1 <= s['reps_min'] <= s['reps_max'] <= 25, f'{rid}: invalid rep ranges')
             check(30 <= s['rest_seconds'] <= 180, f'{rid}: invalid rest')
-            check(s['target_reps_in_reserve']=='1-3',f'{rid}: missing simple effort target')
+            check(s['target_reps_in_reserve']==('not_applicable' if next(e for e in exercises if e['id']==s['exercise_id']).get('logging',{}).get('mode')=='time' else '1-3'),f'{rid}: incorrect effort target')
+            if next(e for e in exercises if e['id']==s['exercise_id']).get('logging',{}).get('mode')=='time':check(5<=s.get('seconds_min',0)<=s.get('seconds_max',0)<=7200,f'{rid}: timed slot invalid')
 
     p=defaults['preferences']
     check(p['weekly_session_goal'] is None, 'Weekly sessions must start UNSET (not 4)')
@@ -91,7 +93,7 @@ def validate():
         return 1
     print(f'PASS: {len(categories)} categories, {len(exercises)} exercises, {len(routines)} routine templates, {len(routines)*4} slots')
     print('PASS: flexible defaults; no forced sessions, times or start dates')
-    print('PASS: routine/exercise references, per-slot prescriptions, 4×5 variants')
+    print('PASS: routine/exercise references, timed and repetition prescriptions, 15×5 variants')
     print('PASS: images pending, equipment not falsely verified, no fabricated history')
     return 0
 

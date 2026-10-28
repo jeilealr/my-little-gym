@@ -10,7 +10,7 @@ export const STARTER_IMAGES={
  incline_dumbbell_press:'incline-db-press',
  pec_deck:'pec-deck',
  cable_fly:'cable-fly',
- low_to_high_cable_fly:'cable-fly', // Same family; actual cable angle needs confirmation.
+ low_to_high_cable_fly:'incline-dumbbell-fly', // Legacy internal ID; now the pictured incline dumbbell fly.
  flat_dumbbell_press:'db-bench-press',
  push_up:'push-up',
  barbell_bench_press:'bench-press',
@@ -49,14 +49,21 @@ export const STARTER_IMAGES={
  machine_biceps_curl:'machine-bicep-curl',
  machine_triceps_extension:'machine-triceps-extension'
 };
+// Image safety for people upgrading from older versions: if a personally edited legacy
+// exercise still describes a different movement/equipment, never show the new image just
+// because it shares an internal exercise ID.
+export function expectedCatalogId(ex) {
+ if(!ex)return null;
+ if(ex.media?.catalog_id)return ex.media.catalog_id;
+ if(ex.id==='low_to_high_cable_fly' && !/incline dumbbell fly/i.test(ex.name||''))return null;
+ if(ex.id==='rope_triceps_pressdown' && /rope/i.test((ex.name||'')+' '+(ex.equipment||'')))return null;
+ if(ex.id==='goblet_squat' && /dumbbell/i.test(ex.equipment||''))return 'db-goblet-squat';
+ if(['standing_calf_raise','seated_calf_raise'].includes(ex.id) && /dumbbell/i.test(ex.equipment||''))return null;
+ return STARTER_IMAGES[ex.id]||null;
+}
 // These illustrations show a closely related movement; the exact bench/cable/grip setup
 // may differ. Surface a note rather than silently passing a different movement as exact.
-export const MEDIA_NOTES={
- low_to_high_cable_fly:'The picture shows a standard cable fly. For this variation, set the cables low and bring your hands upward.',
- rope_triceps_pressdown:'The picture shows a cable pressdown; use the rope attachment as described in the instructions.',
- lateral_raise_machine:'The picture shows a plate-loaded lateral raise machine. Adjust to the machine available at your gym.',
- lying_leg_curl:'Compare the pictured leg curl equipment with the lying model at your gym.'
-};
+export const MEDIA_NOTES={};
 export function imageUrl(ref,pose='start') {
  if(!ref) return null;
  return ref[pose] || ref.start || ref.peak || ref.main || null;
@@ -69,7 +76,8 @@ export function matchVerifiedMedia(exercises,catalog) {
  const out={};
  for (const ex of exercises) {
    // For custom entries use only an exact name match; don't guess a different movement.
-   const chosen=STARTER_IMAGES[ex.id] ? lookup.get(STARTER_IMAGES[ex.id]) : byName.get(nameSlug(ex.name));
+   const slug=expectedCatalogId(ex);
+   const chosen=slug ? lookup.get(slug) : (STARTER_IMAGES[ex.id] ? null : byName.get(nameSlug(ex.name)));
    const flat=chosen?.images?.flat;
    if(!flat)continue;
    const ref={provider:'RepDB',catalog_id:chosen.id};

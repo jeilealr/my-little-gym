@@ -13,7 +13,7 @@ Object.defineProperty(globalThis,'navigator',{value:{onLine:false}});
 Object.defineProperty(globalThis,'location',{value:{protocol:'file:',hostname:'test'}});
 globalThis.window={scrollTo(){}};
 globalThis.confirm=()=>true;
-globalThis.fetch=async (rel)=>({ok:true,json:async()=>JSON.parse(readFileSync(join(root,'app',rel),'utf8'))});
+globalThis.fetch=async (rel)=>({ok:true,json:async()=>JSON.parse(readFileSync(join(root,'app',String(rel).split('?')[0]),'utf8'))});
 let backing=null;
 globalThis.indexedDB={open(){
  const req={result:null,error:null};
@@ -129,3 +129,31 @@ assert.equal(backing.routines.find(x=>x.id==='chest-a').exercises[0].exercise_id
 await click('discard-workout',{id:adhoc.id});
 assert.equal(backing.sessions.at(-1).status,'discarded');
 console.log('PASS: ad-hoc sessions, exercise swap affects only session, discard requires confirmation');
+
+// Manual shared-catalog pull is repeatable; no personal workout is replaced.
+await click('settings');
+assert(nodes.main.innerHTML.includes('Shared routine library'));
+assert(nodes.main.innerHTML.includes('Choose routine file'));
+const prePullSessions=JSON.stringify(backing.sessions);
+await click('pull-catalog');
+assert(backing.catalog.last_checked);
+assert.equal(backing.routines.filter(r=>r.variation!=='Custom').length,75);
+assert.equal(JSON.stringify(backing.sessions),prePullSessions);
+console.log('PASS: Settings pull-only catalog check and existing session preservation');
+
+// A timed exercise can be logged and reviewed without fake repetitions.
+await tab('routines');
+await click('category',{id:'stretch_mobility'});
+await click('routine-details',{id:'stretch_mobility-a'});
+await click('start-workout',{id:'stretch_mobility-a'});
+const timedSession=backing.sessions.at(-1);
+await click('open-exercise',{session:timedSession.id,entry:timedSession.entries[0].id});
+assert(nodes.main.innerHTML.includes('seconds'));
+await change({setInput:'duration_seconds',session:timedSession.id,entry:timedSession.entries[0].id,set:timedSession.entries[0].sets[0].id},'40');
+await click('toggle-set',{session:timedSession.id,entry:timedSession.entries[0].id,set:timedSession.entries[0].sets[0].id});
+await click('back');
+await click('finish-workout',{id:timedSession.id});
+await tab('history');
+await click('history-detail',{id:timedSession.id});
+assert(nodes.main.innerHTML.includes('40 sec'));
+console.log('PASS: timed stretch logging and historical seconds');

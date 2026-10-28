@@ -1,17 +1,25 @@
 import {SCHEMA_VERSION,uid,deepClone,localDate,addDays,activationEnd,effectiveEnd,activationState,activeForCategory,activationsVisible,progressText,formatDate,createActivation,deactivate,createSession,sessionFinished,sessionSummary,lastSets,bestSeries,makeInitialState,validateBackup} from './domain.mjs';
 import {loadState,saveState} from './db.mjs';
-import {fetchVerifiedMedia,cacheIllustrations,imageUrl,MEDIA_NOTES} from './media.mjs';
+import {fetchVerifiedMedia,cacheIllustrations,imageUrl,MEDIA_NOTES,STARTER_IMAGES,expectedCatalogId} from './media.mjs';
 import {completedSessions,summarizeHistory,monthlyHistory,exerciseProgress} from './history.mjs';
+import {initializeNewCatalog,migrateLegacyCatalog,mergeCatalog,fetchCatalog,markCatalogDelete,pendingRoutineCopies,copyPendingRoutine} from './catalog.mjs';
+import {exportRoutine,importRoutine,validateRoutineShare} from './share.mjs';
 
 const $=id=>document.getElementById(id);
 const escapeHtml=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const short=s=>String(s||'').length>80?String(s).slice(0,80):String(s||'');
-const exImg=(ex,pose='start')=> {
+const approvedImageRef=ex=>{
  const ref=S?.mediaRefs?.[ex?.id];
- if(ex?.media?.custom_data_url)return ex.media.custom_data_url;
- return imageUrl(ref,pose)||'assets/exercise-placeholder.svg';
+ const expected=expectedCatalogId(ex);
+ return ref&&((expected&&ref.catalog_id===expected)||(!STARTER_IMAGES[ex?.id]&&!expected))?ref:null;
 };
-const catIcon=id=>({chest:'🏋️',legs:'🍑',back:'🔷',arms_shoulders:'💪'})[id]||'✦';
+const hasExerciseImage=ex=>Boolean(ex?.media?.custom_data_url||imageUrl(approvedImageRef(ex)));
+const exImg=(ex,pose='start')=> {
+ if(ex?.media?.custom_data_url)return ex.media.custom_data_url;
+ // Never show an out-of-date, semantically different exercise illustration.
+ return imageUrl(approvedImageRef(ex),pose)||'assets/exercise-placeholder.svg';
+};
+const catIcon=id=>({chest:'🏋️',legs:'🍑',back:'🔷',arms_shoulders:'💪',full_body:'🌻',upper_body:'🦋',lower_body:'🌱',abs_core:'🧩',stretch_mobility:'🧘',bodyweight:'🏡',push:'🌷',pull:'🌊',glutes:'🍑',conditioning:'💗',functional_balance:'⚖️'})[id]||'✦';
 const getCat=id=>S.categories.find(c=>c.id===id);
 const getRoutine=id=>S.routines.find(r=>r.id===id);
 const getEx=id=>S.exercises.find(e=>e.id===id);
@@ -20,7 +28,7 @@ const catColor=c=> /^#[0-9a-f]{6}$/i.test(c?.color||'')?c.color:'#f5ebf1';
 const mediaHTML=(ex,cls='exercise-thumb',pose='start')=>`<img class="${cls}" data-exercise-image="${escapeHtml(ex?.id||'')}" data-pose="${pose}" alt="${escapeHtml(ex?.name||'Exercise')} ${pose==='peak'?'finish':'starting'} position" src="${escapeHtml(exImg(ex,pose))}" onerror="this.onerror=null;this.src='assets/exercise-placeholder.svg'" loading="lazy">`;
 const chip=s=>`<span class="chip">${escapeHtml(s)}</span>`;
 const fmtWeight=w=>w===null||w===undefined||w===''?'—':`${Number(w).toLocaleString('en-GB',{maximumFractionDigits:2})} kg`;
-const fmtSets=sets=>sets.filter(s=>s.done).map(s=>`${s.weight_kg===null?'BW':fmtWeight(s.weight_kg)} × ${s.reps}`).join(' · ')||'No completed sets';
+const fmtSets=sets=>sets.filter(s=>s.done).map(s=>Number.isInteger(s.duration_seconds)&&s.duration_seconds>0?`${s.duration_seconds} sec`:`${s.weight_kg===null?'BW':fmtWeight(s.weight_kg)} × ${s.reps}`).join(' · ')||'No completed sets';
 const today=()=>localDate();
 let S=null, tab='workout', page='home', ctx={}, stack=[], draftRoutine=null, activationDraft=null, exerciseDraft=null, pickerMode=null, mediaRefreshing=false,toastTimer=0,restEndsAt=null,restInterval=null,historyFilter='all',historyShowAll=false,progressPeriod='3m',progressMetric='weight',imageUploadTarget=null;
 function toast(text){const el=$('toast');el.textContent=text;el.classList.add('show');clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.classList.remove('show'),3000);}
@@ -37,7 +45,7 @@ function routineLines(r,session=null,interactive=true){return r.exercises.map((s
  const ex=getEx(slot.exercise_id)||{id:slot.exercise_id,name:'Missing exercise',equipment:''};
  const entry=session?.entries[i];
  const done=entry?.sets.filter(s=>s.done).length||0;
- const detail=`${slot.sets} sets · ${slot.reps_min}–${slot.reps_max} reps${slot.priority==='optional'?' · Optional':''}`;
+ const detail=ex?.logging?.mode==='time'?`${slot.sets} sets · ${slot.seconds_min||30}–${slot.seconds_max||45} sec${slot.priority==='optional'?' · Optional':''}`:`${slot.sets} sets · ${slot.reps_min}–${slot.reps_max} reps${slot.priority==='optional'?' · Optional':''}`;
  return `<button class="exercise-row" data-action="${session?'open-exercise':'view-exercise-info'}" data-index="${i}" data-ex-id="${escapeHtml(ex.id)}" ${interactive?'':'disabled'}><span class="exercise-index">${i+1}</span>${mediaHTML(ex)}<span class="card-copy"><strong>${escapeHtml(ex.name)}</strong><small>${detail}</small>${session?`<small>${entry?.skipped?'Skipped':done?`${done} of ${entry.sets.length} sets completed`:'Ready to log'}</small>`:''}</span>${session&&done&&done===entry.sets.length?'<span class="complete-mark">✓</span>':'<span class="chev">›</span>'}</button>`;
 }).join('');}
 function viewHome(){
@@ -45,7 +53,7 @@ function viewHome(){
  const inProgress=currentSession();
  let html=`<p class="eyebrow">YOUR TRAINING · NO FIXED SCHEDULE</p><h1 class="page-title">What shall we<br>train today?</h1><p class="subtitle">Choose any active routine, whenever you're ready.</p>`;
  if(inProgress)html+=`<div class="info-box green"><strong>You have an unfinished workout</strong><p>${escapeHtml(inProgress.routine_name)} · your logged sets are saved.</p><button class="primary" data-action="resume-workout" data-id="${inProgress.id}">Resume workout</button></div>`;
- if(!activations.length)html+=`<div class="no-content"><span class="symbol">🌷</span><strong>No active routines yet</strong><p>Your library already has 20 routines. Pick a few you like, and choose how long to use them.</p><button class="primary" data-action="go-routines">Explore my routines</button></div>`;
+ if(!activations.length)html+=`<div class="no-content"><span class="symbol">🌷</span><strong>No active routines yet</strong><p>Your library includes shared plans and routines you create yourself. Pick a few you like, and choose how long to use them.</p><button class="primary" data-action="go-routines">Explore my routines</button></div>`;
  else {
   html+=`<div class="grid-2">`;
   for(const a of activations){const r=getRoutine(a.routine_id),c=getCat(a.category_id);if(!r||!c)continue;
@@ -57,7 +65,7 @@ function viewHome(){
  return html;
 }
 function viewPreview(){const r=getRoutine(ctx.id),c=getCat(r?.category_id);if(!r)return notFound();
- return `${backHeader('Workout preview')}<p class="eyebrow">${escapeHtml(c?.display_name||'Workout')}</p><h1 class="page-title small">${escapeHtml(r.name)}</h1><p class="subtitle">${escapeHtml(r.description||'')} · About ${r.estimated_minutes?.min||30}–${r.estimated_minutes?.max||55} minutes, flexible.</p>${routineLines(r)}<div class="info-box green">Warm up for 5–8 minutes and try one or two lighter practice sets. The fourth exercise is optional.</div><button class="primary" data-action="start-workout" data-id="${r.id}">Start workout</button><button class="secondary" data-action="activation-form" data-id="${r.id}">Select as active routine</button>`;
+ return `${backHeader('Workout preview')}<p class="eyebrow">${escapeHtml(c?.display_name||'Workout')}</p><h1 class="page-title small">${escapeHtml(r.name)}</h1><p class="subtitle">${escapeHtml(r.description||'')} · About ${r.estimated_minutes?.min||30}–${r.estimated_minutes?.max||55} minutes, flexible.</p>${routineLines(r)}<div class="info-box green">Begin gently, adjust each movement to your comfort and fitness level, and skip exercises that cause pain. The fourth exercise is optional.</div><button class="primary" data-action="start-workout" data-id="${r.id}">Start workout</button><button class="secondary" data-action="activation-form" data-id="${r.id}">Select as active routine</button>`;
 }
 function viewSession(){const session=getSession(ctx.id);if(!session)return notFound();
  const r=getRoutine(session.routine_id); const complete=session.entries.flatMap(e=>e.sets).filter(s=>s.done).length;
@@ -66,7 +74,7 @@ function viewSession(){const session=getSession(ctx.id);if(!session)return notFo
  const lines=session.entries.map((entry,i)=>{
  const ex=getEx(entry.exercise_id)||{id:entry.exercise_id,name:entry.exercise_name};
  const count=entry.sets.filter(s=>s.done).length;
- return `<button class="exercise-row" data-action="open-exercise" data-entry="${entry.id}">${mediaHTML(ex)}<span class="card-copy"><strong>${i+1}. ${escapeHtml(entry.exercise_name)}</strong><small>${entry.sets.length} sets · ${entry.slot_snapshot.reps_min}–${entry.slot_snapshot.reps_max} reps${entry.slot_snapshot.priority==='optional'?' · optional':''}</small><small>${entry.skipped?'Skipped':`${count} of ${entry.sets.length} completed`}</small></span>${count&&count===entry.sets.length?'<span class="complete-mark">✓</span>':'<span class="chev">›</span>'}</button>`;
+ return `<button class="exercise-row" data-action="open-exercise" data-entry="${entry.id}">${mediaHTML(ex)}<span class="card-copy"><strong>${i+1}. ${escapeHtml(entry.exercise_name)}</strong><small>${entry.sets.length} sets · ${entry.exercise_mode==='time'?`${entry.slot_snapshot.seconds_min||30}–${entry.slot_snapshot.seconds_max||45} sec`:`${entry.slot_snapshot.reps_min}–${entry.slot_snapshot.reps_max} reps`}${entry.slot_snapshot.priority==='optional'?' · optional':''}</small><small>${entry.skipped?'Skipped':`${count} of ${entry.sets.length} completed`}</small></span>${count&&count===entry.sets.length?'<span class="complete-mark">✓</span>':'<span class="chev">›</span>'}</button>`;
  }).join('');
  return `${backHeader('In progress')}<p class="eyebrow">YOUR WORKOUT</p><h1 class="page-title small">${escapeHtml(session.routine_name)}</h1><p class="subtitle">${complete} of ${total} sets complete · You can take as long as you need.</p><div class="card" style="padding:10px">${lines}</div><div class="form-row"><label for="workout-notes">Notes (optional)</label><textarea id="workout-notes" data-session-notes="${session.id}" placeholder="How did this session feel?">${escapeHtml(session.notes)}</textarea></div><button class="primary" data-action="finish-workout" data-id="${session.id}">Finish workout</button><button class="ghost" data-action="discard-workout" data-id="${session.id}">Discard this session</button><p class="footer-note">Every completed set is saved to your phone immediately.</p>`;
 }
@@ -84,10 +92,12 @@ function viewExercise(){
  const last=lastSets(S,entry?.exercise_id||ex.id,session?.id);
  if(last)html+=`<div class="info-box green"><strong>Last time · ${formatDate(last.session.started_at.slice(0,10))}</strong><p>${escapeHtml(fmtSets(last.sets))}</p></div>`;
  if(session&&entry){
-  html+=`<div class="section-heading"><h2>Log your sets</h2><span class="badge green">kg · reps</span></div>`;
-  html+=`<div class="set-header"><span>Set</span><span>${entry.exercise_load_kind==='per_dumbbell'?'Kg / dumbbell':'Weight (kg)'}</span><span>Reps</span><span>Done</span></div>`;
+  const timed=entry.exercise_mode==='time';
+  html+=`<div class="section-heading"><h2>Log your sets</h2><span class="badge green">${timed?'seconds':'kg · reps'}</span></div>`;
+  html+=timed?'<div class="set-header timed"><span>Set</span><span>Duration (seconds)</span><span>Done</span></div>':`<div class="set-header"><span>Set</span><span>${entry.exercise_load_kind==='per_dumbbell'?'Kg / dumbbell':'Weight (kg)'}</span><span>Reps</span><span>Done</span></div>`;
   entry.sets.forEach((set,i)=>{
-   html+=`<div class="set-line"><span class="set-number">${i+1}</span><input aria-label="Set ${i+1} weight in kilograms" class="inline-input" type="number" step="0.25" min="0" max="2000" inputmode="decimal" placeholder="—" data-set-input="weight_kg" data-session="${session.id}" data-entry="${entry.id}" data-set="${set.id}" value="${set.weight_kg??''}"><input aria-label="Set ${i+1} repetitions" class="inline-input" type="number" step="1" min="0" max="300" inputmode="numeric" placeholder="—" data-set-input="reps" data-session="${session.id}" data-entry="${entry.id}" data-set="${set.id}" value="${set.reps??''}"><button class="set-check ${set.done?'done':''}" aria-label="${set.done?'Unmark':'Complete'} set ${i+1}" data-action="toggle-set" data-session="${session.id}" data-entry="${entry.id}" data-set="${set.id}">${set.done?'✓':'○'}</button></div>`;
+   const fields=timed?`<input aria-label="Set ${i+1} seconds" class="inline-input" type="number" step="1" min="1" max="7200" inputmode="numeric" placeholder="${entry.slot_snapshot.seconds_min||30}" data-set-input="duration_seconds" data-session="${session.id}" data-entry="${entry.id}" data-set="${set.id}" value="${set.duration_seconds??''}">`:`<input aria-label="Set ${i+1} weight in kilograms" class="inline-input" type="number" step="0.25" min="0" max="2000" inputmode="decimal" placeholder="—" data-set-input="weight_kg" data-session="${session.id}" data-entry="${entry.id}" data-set="${set.id}" value="${set.weight_kg??''}"><input aria-label="Set ${i+1} repetitions" class="inline-input" type="number" step="1" min="0" max="300" inputmode="numeric" placeholder="—" data-set-input="reps" data-session="${session.id}" data-entry="${entry.id}" data-set="${set.id}" value="${set.reps??''}">`;
+   html+=`<div class="set-line ${timed?'timed':''}"><span class="set-number">${i+1}</span>${fields}<button class="set-check ${set.done?'done':''}" aria-label="${set.done?'Unmark':'Complete'} set ${i+1}" data-action="toggle-set" data-session="${session.id}" data-entry="${entry.id}" data-set="${set.id}">${set.done?'✓':'○'}</button></div>`;
   });
   html+=`<button class="secondary" data-action="add-set" data-session="${session.id}" data-entry="${entry.id}">+ Add set</button><div class="row-between" style="margin-top:10px"><span id="rest-label" class="small-text">${restEndsAt&&restEndsAt>Date.now()?`Rest · ${Math.ceil((restEndsAt-Date.now())/1000)} s`:'Optional rest timer'}</span><button class="inline-action" data-action="${restEndsAt&&restEndsAt>Date.now()?'stop-rest':'start-rest'}" data-seconds="${entry.slot_snapshot.rest_seconds||90}">${restEndsAt&&restEndsAt>Date.now()?'Stop timer':`Start ${entry.slot_snapshot.rest_seconds||90}s`}</button></div><div class="row-between" style="margin-top:16px"><button class="inline-action" data-action="swap-exercise" data-entry="${entry.id}" data-session="${session.id}">Swap exercise</button><button class="inline-action" data-action="skip-exercise" data-entry="${entry.id}" data-session="${session.id}">${entry.skipped?'Unskip':'Skip exercise'}</button></div>`;
   html+=`<button class="primary" data-action="back">Back to workout</button>`;
@@ -105,9 +115,12 @@ function viewRoutines(){
   html+=coloredCard(c,r.name,`${progressText(a)} · ${activationState(a)==='scheduled'?'Scheduled':'Current'}`,'manage-activation',`data-id="${a.id}"`);
  }
  html+=`<div class="section-heading"><h2>Routine library</h2><button class="inline-action" data-action="new-category">+ Category</button></div>`;
- for(const c of [...S.categories].sort((a,b)=>(a.sort_order||0)-(b.sort_order||0))){const count=S.routines.filter(r=>r.category_id===c.id).length;
-  html+=coloredCard(c,c.display_name,`${count} ${count===1?'routine':'routines'} · tap to explore`,'category',`data-id="${c.id}"`);
+ const catGroups=[['strength','Strength splits'],['flexible','Flexible workouts'],['targeted','Focused training'],['recovery','Recovery & mobility'],['conditioning','Cardio'],['mixed','Functional']];
+ for(const [group,label] of catGroups){const members=[...S.categories].filter(c=>(c.group||'strength')===group).sort((a,b)=>(a.sort_order||0)-(b.sort_order||0));if(!members.length)continue;
+  html+=`<div class="library-group-heading">${escapeHtml(label)}</div>`;
+  for(const c of members){const count=S.routines.filter(r=>r.category_id===c.id).length;html+=coloredCard(c,c.display_name,`${count} ${count===1?'routine':'routines'} · tap to explore`,'category',`data-id="${c.id}"`);}
  }
+ for(const c of S.categories.filter(c=>!catGroups.some(x=>x[0]===(c.group||'strength')))){const count=S.routines.filter(r=>r.category_id===c.id).length;html+=coloredCard(c,c.display_name,`${count} routines`,'category',`data-id="${c.id}"`);}
  html+=`<button class="secondary" data-action="create-routine">+ Create a new routine</button><p class="footer-note">All your routines are editable. Your past workout records won't change.</p>`;
  return html;
 }
@@ -120,7 +133,7 @@ function viewCategory(){const c=getCat(ctx.id);if(!c)return notFound();const rou
 function viewRoutine(){const r=getRoutine(ctx.id);const c=getCat(r?.category_id);if(!r)return notFound();const current=activeForCategory(S,r.category_id);
  let html=`${backHeader('Routine library')}<p class="eyebrow">${escapeHtml(c?.display_name)} · ROUTINE ${escapeHtml(r.variation||'CUSTOM')}</p><h1 class="page-title small">${escapeHtml(r.name)}</h1><p class="subtitle">${escapeHtml(r.description||'')} · About ${r.estimated_minutes?.min||30}–${r.estimated_minutes?.max||55} min</p>${routineLines(r)}`;
  if(current?.routine_id===r.id)html+=`<div class="info-box green">✓ This routine is active · ${progressText(current)}</div>`;
- html+=`<button class="primary" data-action="activation-form" data-id="${r.id}">Activate routine</button><button class="secondary" data-action="start-workout" data-id="${r.id}">Train this routine once</button><button class="secondary" data-action="edit-routine" data-id="${r.id}">Edit exercises and sets</button><button class="ghost" data-action="duplicate-routine" data-id="${r.id}">Duplicate routine</button><button class="inline-action" style="display:block;margin:17px auto" data-action="delete-routine" data-id="${r.id}">Delete from library</button>`;
+ html+=`<button class="primary" data-action="activation-form" data-id="${r.id}">Activate routine</button><button class="secondary" data-action="start-workout" data-id="${r.id}">Train this routine once</button><button class="secondary" data-action="edit-routine" data-id="${r.id}">Edit exercises and sets</button><button class="ghost" data-action="duplicate-routine" data-id="${r.id}">Duplicate routine</button><button class="secondary" data-action="share-routine" data-id="${r.id}">↗ Share this routine (no workout data)</button><button class="inline-action" style="display:block;margin:17px auto" data-action="delete-routine" data-id="${r.id}">Delete from library</button>`;
  return html;
 }
 function viewActivation(){const r=getRoutine(ctx.id);if(!r)return notFound();if(!activationDraft)activationDraft={start:today(),duration:'4',custom:''};
@@ -138,7 +151,7 @@ function viewEditor(){const r=draftRoutine;if(!r)return notFound();const c=getCa
  let html=`${backHeader('Routine editor')}<h1 class="page-title small">${ctx.new?'Create routine':'Edit routine'}</h1><div class="form-row"><label>Routine name</label><input data-editor-field="name" maxlength="80" value="${escapeHtml(r.name)}" placeholder="e.g. Legs · Glute focus"></div><div class="form-row"><label>Category</label><select data-editor-field="category_id">${cats}</select></div><div class="form-row"><label>Short description (optional)</label><textarea data-editor-field="description" maxlength="240">${escapeHtml(r.description||'')}</textarea></div><div class="section-heading"><h2>Exercises</h2><span class="badge">${r.exercises.length}</span></div>`;
  r.exercises.forEach((slot,i)=>{
   const ex=getEx(slot.exercise_id);
-  html+=`<div class="card" style="margin-bottom:12px"><div class="card-row">${mediaHTML(ex)}<div class="card-copy"><strong>${escapeHtml(ex?.name||'Missing exercise')}</strong><small>${escapeHtml(ex?.equipment||'')}</small></div></div><div class="slot-edit"><div><span class="small-text">Sets</span><input data-editor-slot="sets" data-index="${i}" type="number" min="1" max="10" value="${slot.sets}"></div><div><span class="small-text">Min reps</span><input data-editor-slot="reps_min" data-index="${i}" type="number" min="1" max="50" value="${slot.reps_min}"></div><div><span class="small-text">Max reps</span><input data-editor-slot="reps_max" data-index="${i}" type="number" min="1" max="50" value="${slot.reps_max}"></div></div><div class="mini-actions"><button class="mini-btn" data-action="move-slot" data-index="${i}" data-dir="-1" ${i===0?'disabled':''}>↑ Move</button><button class="mini-btn" data-action="move-slot" data-index="${i}" data-dir="1" ${i===r.exercises.length-1?'disabled':''}>↓ Move</button><button class="mini-btn" data-action="editor-swap" data-index="${i}">Swap</button><button class="mini-btn warn" data-action="remove-slot" data-index="${i}">Remove</button></div></div>`;
+  html+=`<div class="card" style="margin-bottom:12px"><div class="card-row">${mediaHTML(ex)}<div class="card-copy"><strong>${escapeHtml(ex?.name||'Missing exercise')}</strong><small>${escapeHtml(ex?.equipment||'')}</small></div></div><div class="slot-edit"><div><span class="small-text">Sets</span><input data-editor-slot="sets" data-index="${i}" type="number" min="1" max="10" value="${slot.sets}"></div><div><span class="small-text">${ex?.logging?.mode==='time'?'Min seconds':'Min reps'}</span><input data-editor-slot="${ex?.logging?.mode==='time'?'seconds_min':'reps_min'}" data-index="${i}" type="number" min="1" max="7200" value="${ex?.logging?.mode==='time'?(slot.seconds_min||30):slot.reps_min}"></div><div><span class="small-text">${ex?.logging?.mode==='time'?'Max seconds':'Max reps'}</span><input data-editor-slot="${ex?.logging?.mode==='time'?'seconds_max':'reps_max'}" data-index="${i}" type="number" min="1" max="7200" value="${ex?.logging?.mode==='time'?(slot.seconds_max||45):slot.reps_max}"></div></div><div class="mini-actions"><button class="mini-btn" data-action="move-slot" data-index="${i}" data-dir="-1" ${i===0?'disabled':''}>↑ Move</button><button class="mini-btn" data-action="move-slot" data-index="${i}" data-dir="1" ${i===r.exercises.length-1?'disabled':''}>↓ Move</button><button class="mini-btn" data-action="editor-swap" data-index="${i}">Swap</button><button class="mini-btn warn" data-action="remove-slot" data-index="${i}">Remove</button></div></div>`;
  });
  html+=`<button class="secondary" data-action="editor-add">+ Add an exercise</button><button class="primary" data-action="save-editor">Save routine</button><p class="footer-note">Edits increase the routine revision. Previous workouts remain unchanged.</p>`;
  return html;
@@ -148,8 +161,8 @@ function pickerItems(query){const s=String(query||'').trim().toLowerCase();const
  if(!items.length)return '<div class="no-content">No exercises found. Create your own below.</div>';
  return items.map(e=>`<button class="list-row" data-action="select-exercise" data-id="${e.id}">${mediaHTML(e)}<span class="card-copy"><strong>${escapeHtml(e.name)}</strong><small>${escapeHtml(e.equipment)}</small></span><span class="chev">+</span></button>`).join('');
 }
-function viewExerciseCreate(){if(!exerciseDraft)exerciseDraft={name:'',name_de:'',equipment:'',primary_muscles:[],instructions:['',''],logging:{load_kind:'machine_or_total_load'},media:{}};
- return `${backHeader('Exercise library')}<h1 class="page-title small">New exercise</h1><p class="subtitle">Give the exercise a name and add a picture showing the correct movement. Pictures are required.</p><div class="form-row"><label>Name</label><input data-exercise-create="name" value="${escapeHtml(exerciseDraft.name)}" maxlength="100" placeholder="e.g. Cable glute kickback"></div><div class="form-row"><label>Equipment (optional)</label><input data-exercise-create="equipment" value="${escapeHtml(exerciseDraft.equipment)}" maxlength="100" placeholder="e.g. Cable station"></div><div class="form-row"><label>Technique cue 1</label><input data-exercise-create="instruction0" value="${escapeHtml(exerciseDraft.instructions[0]||'')}" maxlength="220" placeholder="Starting position"></div><div class="form-row"><label>Technique cue 2</label><input data-exercise-create="instruction1" value="${escapeHtml(exerciseDraft.instructions[1]||'')}" maxlength="220" placeholder="Movement and finishing position"></div><div class="form-row"><label>How should weight be logged?</label><select data-exercise-create="load_kind"><option value="machine_or_total_load" ${exerciseDraft.logging.load_kind==='machine_or_total_load'?'selected':''}>Total / machine weight</option><option value="per_dumbbell" ${exerciseDraft.logging.load_kind==='per_dumbbell'?'selected':''}>Weight per dumbbell</option><option value="bodyweight" ${exerciseDraft.logging.load_kind==='bodyweight'?'selected':''}>Bodyweight / optional kg</option></select></div><button class="secondary" data-action="upload-exercise-photo">${exerciseDraft.media.custom_data_url?'✓ Photo added':'Add required exercise picture'}</button><button class="primary" data-action="save-exercise">Save exercise</button>`;
+function viewExerciseCreate(){if(!exerciseDraft)exerciseDraft={name:'',name_de:'',equipment:'',primary_muscles:[],instructions:['',''],logging:{load_kind:'machine_or_total_load',mode:'reps'},media:{}};
+ return `${backHeader('Exercise library')}<h1 class="page-title small">New exercise</h1><p class="subtitle">Give the exercise a name and add a picture showing the correct movement. Pictures are required.</p><div class="form-row"><label>Name</label><input data-exercise-create="name" value="${escapeHtml(exerciseDraft.name)}" maxlength="100" placeholder="e.g. Cable glute kickback"></div><div class="form-row"><label>Equipment (optional)</label><input data-exercise-create="equipment" value="${escapeHtml(exerciseDraft.equipment)}" maxlength="100" placeholder="e.g. Cable station"></div><div class="form-row"><label>Technique cue 1</label><input data-exercise-create="instruction0" value="${escapeHtml(exerciseDraft.instructions[0]||'')}" maxlength="220" placeholder="Starting position"></div><div class="form-row"><label>Technique cue 2</label><input data-exercise-create="instruction1" value="${escapeHtml(exerciseDraft.instructions[1]||'')}" maxlength="220" placeholder="Movement and finishing position"></div><div class="form-row"><label>Exercise tracking</label><select data-exercise-create="mode"><option value="reps" ${exerciseDraft.logging.mode!=='time'?'selected':''}>Weight and repetitions</option><option value="time" ${exerciseDraft.logging.mode==='time'?'selected':''}>Duration (seconds)</option></select></div><div class="form-row"><label>How should weight be logged?</label><select data-exercise-create="load_kind"><option value="machine_or_total_load" ${exerciseDraft.logging.load_kind==='machine_or_total_load'?'selected':''}>Total / machine weight</option><option value="per_dumbbell" ${exerciseDraft.logging.load_kind==='per_dumbbell'?'selected':''}>Weight per dumbbell</option><option value="bodyweight" ${exerciseDraft.logging.load_kind==='bodyweight'?'selected':''}>Bodyweight / optional kg</option></select></div><button class="secondary" data-action="upload-exercise-photo">${exerciseDraft.media.custom_data_url?'✓ Photo added':'Add required exercise picture'}</button><button class="primary" data-action="save-exercise">Save exercise</button>`;
 }
 function viewCategoryCreate(){return `${backHeader('Routines')}<h1 class="page-title small">New category</h1><p class="subtitle">For future full-body, upper/lower or any kind of workout.</p><div class="form-row"><label for="new-category-name">Category name</label><input id="new-category-name" maxlength="40" placeholder="e.g. Full Body"></div><button class="primary" data-action="save-category">Create category</button>`;}
 function filterPills(selected,options,action){
@@ -203,12 +216,14 @@ function viewExerciseProgress(){
  const ex=getEx(ctx.id),complete=completedSessions(S);
  const history=complete.flatMap(s=>s.entries.filter(e=>e.exercise_id===ctx.id).map(e=>({session:s,sets:e.sets.filter(x=>x.done)}))).filter(x=>x.sets.length);
  const name=ex?.name||history[0]?.session.entries.find(e=>e.exercise_id===ctx.id)?.exercise_name||'Exercise';
- const all=exerciseProgress(S,ctx.id,progressMetric,'all',today());
- const visible=exerciseProgress(S,ctx.id,progressMetric,progressPeriod,today());
- const unit=progressMetric==='weight'?'kg':'reps';
+ const timed=ex?.logging?.mode==='time'||history.some(x=>x.session.entries.some(e=>e.exercise_id===ctx.id&&e.exercise_mode==='time'));
+ const metric=timed?'duration':progressMetric;
+ const all=exerciseProgress(S,ctx.id,metric,'all',today());
+ const visible=exerciseProgress(S,ctx.id,metric,progressPeriod,today());
+ const unit=metric==='duration'?'seconds':metric==='weight'?'kg':'reps';
  let html=`${backHeader('History')}<h1 class="page-title small">${escapeHtml(name)}</h1><p class="subtitle">Your actual logged sets, independent of which routine you used.</p>`;
- html+=filterPills(progressMetric,[{id:'weight',label:'Best weight'},{id:'reps',label:'Best reps'}],'progress-metric');
- html+=`<div class="history-panel">${filterPills(progressPeriod,[{id:'1m',label:'1M'},{id:'3m',label:'3M'},{id:'6m',label:'6M'},{id:'1y',label:'1Y'},{id:'all',label:'All'}],'progress-period')}<p class="small-text">${progressMetric==='weight'?'Heaviest completed set each session. Compare repetitions below to judge progress fairly.':'Highest repetitions completed in any set each session.'}</p>${lineChart(visible,unit)}`;
+ html+=timed?'<div class="pill-row"><span class="chip">Best duration per session</span></div>':filterPills(progressMetric,[{id:'weight',label:'Best weight'},{id:'reps',label:'Best reps'}],'progress-metric');
+ html+=`<div class="history-panel">${filterPills(progressPeriod,[{id:'1m',label:'1M'},{id:'3m',label:'3M'},{id:'6m',label:'6M'},{id:'1y',label:'1Y'},{id:'all',label:'All'}],'progress-period')}<p class="small-text">${timed?'Longest completed timed set per session.':progressMetric==='weight'?'Heaviest completed set each session. Compare repetitions below to judge progress fairly.':'Highest repetitions completed in any set each session.'}</p>${lineChart(visible,unit)}`;
  if(all.length>1){const first=all[0],latest=all.at(-1);const delta=latest.value-first.value;
   html+=`<div class="history-summary"><div class="metric"><strong>${first.value}</strong><small>First ${unit}</small></div><div class="metric"><strong>${delta>0?'+':''}${Number(delta.toFixed(2))}</strong><small>Change ${unit}</small></div><div class="metric"><strong>${latest.value}</strong><small>Latest ${unit}</small></div></div>`;
  }
@@ -222,9 +237,9 @@ function viewTrends(){
  const totals=summarizeHistory(sessions);
  return `${backHeader('History')}<p class="eyebrow">OVER TIME</p><h1 class="page-title small">Training trends</h1><p class="subtitle">A simple overview of how consistently you train. More sessions do not always mean better results.</p><div class="history-summary"><div class="metric"><strong>${totals.workouts}</strong><small>All workouts</small></div><div class="metric"><strong>${totals.sets}</strong><small>All sets</small></div><div class="metric"><strong>${totals.minutes}</strong><small>Total minutes</small></div></div><div class="history-panel"><strong>Workouts by month</strong>${activityBars(bins,'workouts')}</div><div class="history-panel"><strong>Completed sets by month</strong>${activityBars(bins,'sets')}</div><p class="hint">Charts show your own saved workouts only, and do not depend on routine-rotation dates.</p>`;
 }
-function viewSettings(){const loaded=S.exercises.filter(e=>e.media?.custom_data_url||S.mediaRefs?.[e.id]).length;
- const missing=S.exercises.filter(e=>!e.media?.custom_data_url&&!S.mediaRefs?.[e.id]);
- return `${backHeader('Settings')}<h1 class="page-title small">Settings & backup</h1><div class="section-heading"><h2>Your data stays with you</h2></div><div class="card"><strong>Export a backup</strong><p class="small-text">Download all routines, edits, activations and workout logs as a JSON file. Keep it somewhere safe.</p><button class="secondary" data-action="export-backup">Export my data</button></div><div class="card"><strong>Import a backup</strong><p class="small-text">Restores an exported file. You'll review and confirm before replacing any existing data.</p><button class="secondary" data-action="import-backup">Choose backup file</button></div><div class="section-heading"><h2>Exercise illustrations</h2></div><div class="card"><strong>Illustrations found: <span id="media-count">${loaded}</span> / ${S.exercises.length}</strong><p class="small-text">Every exercise needs a clear image. The 42 starter movements now have curated source mappings. Check them here, then download images over Wi-Fi before training offline. If an image is missing, add a verified photo yourself.</p><button class="secondary" data-action="refresh-media" ${mediaRefreshing?'disabled':''}>Find exercise illustrations</button><button class="ghost" data-action="cache-images">Download found illustrations for offline use</button><p class="hint" id="media-progress">Image requests contact the image provider; personal workout logs are never sent there.</p>${missing.length?`<div class="missing-exercises"><strong>${missing.length} images still need attention</strong>${missing.map(e=>`<button class="list-row" data-action="upload-existing-photo" data-id="${escapeHtml(e.id)}"><span class="card-copy">${escapeHtml(e.name)}<small>Add my photo</small></span><span class="chev">＋</span></button>`).join('')}</div>`:'<div class="info-box green"><strong>All exercise images mapped</strong><p>Cache them for offline use, then verify by opening them once on your iPhone.</p></div>'}</div><div class="section-heading"><h2>About</h2></div><div class="card"><p class="small-text">My Little Gym · personal, independent app · Leipzig Thomaskirche. No account, ads, paid features or analytics.</p><p class="small-text">Exercise illustrations, when available: <a href="https://repdb.co" rel="noopener noreferrer" target="_blank">Exercise data by RepDB (repdb.co)</a>, free tier with attribution. Illustrations may contain errors; follow movement cues and ask a trainer if unsure.</p><p class="small-text">Your records stay in this browser on this device. Clearing website data or reinstalling may remove them. Export backups regularly.</p><p class="small-text">Install from Safari: Share → Add to Home Screen → Open as Web App. A publicly accessible HTTPS site is required to install.</p></div>`;
+function viewSettings(){const loaded=S.exercises.filter(hasExerciseImage).length;
+ const missing=S.exercises.filter(e=>!hasExerciseImage(e));
+ return `${backHeader('Settings')}<h1 class="page-title small">Settings & backup</h1><div class="section-heading"><h2>Your data stays with you</h2></div><div class="card"><strong>Export a backup</strong><p class="small-text">Download all routines, edits, activations and workout logs as a JSON file. Keep it somewhere safe.</p><button class="secondary" data-action="export-backup">Export my data</button></div><div class="card"><strong>Import a backup</strong><p class="small-text">Restores an exported file. You'll review and confirm before replacing any existing data.</p><button class="secondary" data-action="import-backup">Choose backup file</button></div><div class="section-heading"><h2>Shared routine library</h2></div><div class="card"><strong>Shared catalog v${S.catalog?.version||'—'}</strong><p class="small-text">Only download new categories, exercises and routines. Your personalized plans and workout history are never uploaded or overwritten.</p><p class="small-text">${S.catalog?.last_checked?`Last checked ${escapeHtml(new Date(S.catalog.last_checked).toLocaleDateString('en-GB'))}`:'Not checked since installation'}</p><button class="secondary" data-action="pull-catalog">↓ Check for new shared routines</button>${pendingRoutineCopies(S).length?`<div class="missing-exercises"><strong>${pendingRoutineCopies(S).length} updated routine versions available</strong>${pendingRoutineCopies(S).map(x=>`<button class="list-row" data-action="import-pending-routine" data-id="${escapeHtml(x.id)}"><span class="card-copy">${escapeHtml(x.routine.name)}<small>Save new shared version as a separate copy</small></span><span class="chev">＋</span></button>`).join('')}</div>`:''}</div><div class="card"><strong>Import a shared routine</strong><p class="small-text">Add a routine from your partner without importing their workouts, progress or settings.</p><button class="secondary" data-action="import-shared-routine">Choose routine file</button></div><div class="section-heading"><h2>Exercise illustrations</h2></div><div class="card"><strong>Illustrations found: <span id="media-count">${loaded}</span> / ${S.exercises.length}</strong><p class="small-text">Every exercise needs a clear image. The shared catalog includes curated source mappings. Check them here, then download images over Wi-Fi before training offline. If an image is missing, add a verified photo yourself.</p><button class="secondary" data-action="refresh-media" ${mediaRefreshing?'disabled':''}>Find exercise illustrations</button><button class="ghost" data-action="cache-images">Download found illustrations for offline use</button><p class="hint" id="media-progress">Image requests contact the image provider; personal workout logs are never sent there.</p>${missing.length?`<div class="missing-exercises"><strong>${missing.length} images still need attention</strong>${missing.map(e=>`<button class="list-row" data-action="upload-existing-photo" data-id="${escapeHtml(e.id)}"><span class="card-copy">${escapeHtml(e.name)}<small>Add my photo</small></span><span class="chev">＋</span></button>`).join('')}</div>`:'<div class="info-box green"><strong>All exercise images mapped</strong><p>Cache them for offline use, then verify by opening them once on your iPhone.</p></div>'}</div><div class="section-heading"><h2>About</h2></div><div class="card"><p class="small-text">My Little Gym v0.2 · pull-only shared library · Leipzig Thomaskirche. No account, ads, paid features or analytics.</p><p class="small-text">Exercise illustrations, when available: <a href="https://repdb.co" rel="noopener noreferrer" target="_blank">Exercise data by RepDB (repdb.co)</a>, free tier with attribution. Illustrations may contain errors; follow movement cues and ask a trainer if unsure.</p><p class="small-text">Your records stay in this browser on this device. Clearing website data or reinstalling may remove them. Export backups regularly.</p><p class="small-text">Install from Safari: Share → Add to Home Screen → Open as Web App. A publicly accessible HTTPS site is required to install.</p></div>`;
 }
 function notFound(){return `${backHeader('')}<h1 class="page-title small">Not found</h1><p class="subtitle">This item isn't available anymore.</p><button class="primary" data-action="go-home">Go to workouts</button>`;}
 function render(){
@@ -242,6 +257,12 @@ async function act(action,el){
  const id=el.dataset.id,entryId=el.dataset.entry,sessionId=el.dataset.session;
  switch(action){
   case 'settings':route('settings');return;
+  case 'pull-catalog':await pullCatalog(true);return;
+  case 'import-shared-routine':$('shared-routine-file').click();return;
+  case 'import-pending-routine':{if(!confirm('Add the updated shared routine as a separate copy? Your original will remain unchanged.'))return;const r=copyPendingRoutine(S,id,uid);await persist();toast('Updated routine copied to your library');goTo('routine',{id:r.id});return;}
+  case 'share-routine':{const payload=exportRoutine(S,id);const data=JSON.stringify(payload,null,2);const file=new File([data],`my-little-gym-${id}-routine.json`,{type:'application/json'});
+   if(navigator.share&&navigator.canShare?.({files:[file]})){try{await navigator.share({files:[file],title:payload.routine.name,text:'My Little Gym routine — no workout history included'});return;}catch(e){if(e.name==='AbortError')return;}}
+   downloadJson(data,file.name);toast('Routine file downloaded — share this file');return;}
   case 'start-rest':{const n=Number(el.dataset.seconds)||90;restEndsAt=Date.now()+n*1000;clearInterval(restInterval);restInterval=setInterval(()=>{if(!restEndsAt)return;const remaining=Math.ceil((restEndsAt-Date.now())/1000);const label=$('rest-label');if(label)label.textContent=remaining>0?`Rest · ${remaining} s`:'Rest finished';if(remaining<=0){restEndsAt=null;clearInterval(restInterval);toast('Rest finished');}},1000);render();return;}
   case 'stop-rest':{restEndsAt=null;clearInterval(restInterval);render();return;}
   case 'back':back();return;
@@ -261,12 +282,12 @@ async function act(action,el){
   case 'view-exercise-info':route('exercise',{exerciseId:el.dataset.exId});return;
   case 'toggle-set':{
    const {set,entry}=getSet(el);if(!set)return;
-   if(!set.done && (!Number.isInteger(set.reps)||set.reps<0)){toast('Enter repetitions first');return;}
+   if(!set.done && (entry.exercise_mode==='time'?(!Number.isInteger(set.duration_seconds)||set.duration_seconds<1):(!Number.isInteger(set.reps)||set.reps<0))){toast(entry.exercise_mode==='time'?'Enter duration in seconds first':'Enter repetitions first');return;}
    set.done=!set.done;set.completed_at=set.done?new Date().toISOString():null;entry.skipped=false;await persist();render();return;
   }
   case 'add-set':{
    const s=getSession(sessionId),e=s?.entries.find(x=>x.id===entryId);if(!e)return;
-   e.sets.push({id:uid('set'),number:e.sets.length+1,weight_kg:null,reps:null,done:false,completed_at:null});await persist();render();return;
+   e.sets.push({id:uid('set'),number:e.sets.length+1,weight_kg:null,reps:null,duration_seconds:null,done:false,completed_at:null});await persist();render();return;
   }
   case 'skip-exercise':{
    const s=getSession(sessionId),e=s?.entries.find(x=>x.id===entryId);if(!e)return;
@@ -323,13 +344,16 @@ async function act(action,el){
    const r=getRoutine(id);if(!r)return;
    if(S.activations.some(a=>a.routine_id===id && ['active','scheduled'].includes(activationState(a)))){toast('Deactivate the routine before deleting it');return;}
    if(!confirm(`Remove "${r.name}" from the library? Past workout records will remain.`))return;
-   S.routines=S.routines.filter(x=>x.id!==id);await persist();toast('Routine removed');switchTab('routines');return;
+   markCatalogDelete(S,'routines',id);S.routines=S.routines.filter(x=>x.id!==id);await persist();toast('Routine removed');switchTab('routines');return;
   }
   case 'save-editor':{
    const r=draftRoutine;if(!r)return;
    if(!r.name.trim()){toast('Please give the routine a name');return;}
    if(!r.exercises.length){toast('Add at least one exercise');return;}
-   if(r.exercises.some(s=>!getEx(s.exercise_id)||!Number.isInteger(s.sets)||s.sets<1||s.sets>10||s.reps_min<1||s.reps_min>s.reps_max||s.reps_max>50)){toast('Check each exercise’s sets and reps');return;}
+   if(r.exercises.some(s=>{const ex=getEx(s.exercise_id);if(!ex||!Number.isInteger(s.sets)||s.sets<1||s.sets>10)return true;
+    if(ex.logging?.mode==='time')return !Number.isInteger(s.seconds_min)||!Number.isInteger(s.seconds_max)||s.seconds_min<1||s.seconds_max<s.seconds_min||s.seconds_max>7200;
+    return !Number.isInteger(s.reps_min)||!Number.isInteger(s.reps_max)||s.reps_min<1||s.reps_min>s.reps_max||s.reps_max>50;
+   })){toast('Check each exercise’s sets and reps or seconds');return;}
    const current=getRoutine(r.id);
    r.name=r.name.trim();r.revision=(current?.revision||0)+1;r.updated_at=new Date().toISOString();
    if(current)S.routines[S.routines.indexOf(current)]=deepClone(r);else S.routines.push(deepClone(r));
@@ -344,14 +368,14 @@ async function act(action,el){
    [draftRoutine.exercises[i],draftRoutine.exercises[j]]=[draftRoutine.exercises[j],draftRoutine.exercises[i]];render();return;
   }
   case 'select-exercise':{
-   if(!getEx(id)){toast('Exercise unavailable');return;}
-   if(pickerMode?.kind==='editor-add')draftRoutine.exercises.push({exercise_id:id,sets:3,reps_min:8,reps_max:12,rest_seconds:90,priority:'essential',substitution_allowed:true,target_reps_in_reserve:'1-3'});
-   else if(pickerMode?.kind==='editor-swap')draftRoutine.exercises[pickerMode.index].exercise_id=id;
+   const ex=getEx(id);if(!ex){toast('Exercise unavailable');return;}
+   if(pickerMode?.kind==='editor-add')draftRoutine.exercises.push({exercise_id:id,sets:ex.logging?.mode==='time'?2:3,reps_min:8,reps_max:12,...(ex.logging?.mode==='time'?{seconds_min:20,seconds_max:45}:{}),rest_seconds:90,priority:'essential',substitution_allowed:true,target_reps_in_reserve:ex.logging?.mode==='time'?'not_applicable':'1-3'});
+   else if(pickerMode?.kind==='editor-swap'){const slot=draftRoutine.exercises[pickerMode.index];slot.exercise_id=id;if(ex.logging?.mode==='time'){slot.seconds_min||=20;slot.seconds_max||=45;slot.target_reps_in_reserve='not_applicable';}else{delete slot.seconds_min;delete slot.seconds_max;slot.target_reps_in_reserve='1-3';}}
    else if(pickerMode?.kind==='session'){
-    const s=getSession(pickerMode.sessionId),e=s?.entries.find(x=>x.id===pickerMode.entryId),ex=getEx(id);
+    const s=getSession(pickerMode.sessionId),e=s?.entries.find(x=>x.id===pickerMode.entryId);
     if(!e)return;
     if(e.sets.some(x=>x.done)){toast('You cannot swap an exercise after logging completed sets');return;}
-    e.exercise_id=id;e.exercise_name=ex.name;e.exercise_equipment=ex.equipment;e.exercise_load_kind=ex.logging?.load_kind||'machine_or_total_load';
+    e.exercise_id=id;e.exercise_name=ex.name;e.exercise_equipment=ex.equipment;e.exercise_load_kind=ex.logging?.load_kind||'machine_or_total_load';e.exercise_mode=ex.logging?.mode||'reps';e.sets.forEach(s=>{s.reps=null;s.weight_kg=null;s.duration_seconds=null;});
     await persist();toast('Exercise swapped for this workout');
    }
    if(pickerMode?.kind==='session'){goTo('session',{id:pickerMode.sessionId});}
@@ -376,7 +400,7 @@ async function act(action,el){
   case 'new-category':route('category-create');return;
   case 'save-category':{
    const name=$('new-category-name')?.value.trim();if(!name){toast('Enter a category name');return;}
-   const c={id:uid('category'),display_name:short(name),color:['#f8e0e6','#e5f1df','#e6ebfa','#fff0d8','#e8e4f5'][S.categories.length%5],sort_order:S.categories.length+1};
+   const c={id:uid('category'),display_name:short(name),color:['#f8e0e6','#e5f1df','#e6ebfa','#fff0d8','#e8e4f5'][S.categories.length%5],sort_order:S.categories.length+1,group:'mixed'};
    S.categories.push(c);await persist();toast('Category created');switchTab('routines');return;
   }
   case 'history-detail':if(page==='finished'){tab='history';goTo('history-detail',{id});}else route('history-detail',{id});return;
@@ -423,8 +447,8 @@ async function handleClick(e){const button=e.target.closest('button[data-action]
 function handleInput(e){if(e.target.id==='exercise-search'){$('picker-list').innerHTML=pickerItems(e.target.value);}}
 async function handleChange(e){const el=e.target;
  if(el.dataset.setInput){const {set}=getSet(el);if(!set)return;const key=el.dataset.setInput;const n=el.value.trim()===''?null:Number(el.value);
-  if(n!==null&&(!Number.isFinite(n)||n<0||n>(key==='reps'?300:2000)||(key==='reps'&&!Number.isInteger(n)))){toast('Please enter a valid number');render();return;}
-  set[key]=n;if(set.done&&key==='reps'&&n===null){set.done=false;set.completed_at=null;}await persist();return;}
+  if(n!==null&&(!Number.isFinite(n)||n<0||n>(key==='reps'?300:key==='duration_seconds'?7200:2000)||((key==='reps'||key==='duration_seconds')&&!Number.isInteger(n)))){toast('Please enter a valid number');render();return;}
+  set[key]=n;if(set.done&&(key==='reps'||key==='duration_seconds')&&n===null){set.done=false;set.completed_at=null;}await persist();return;}
  if(el.dataset.sessionNotes){const s=getSession(el.dataset.sessionNotes);if(s){s.notes=el.value.slice(0,2000);await persist();}return;}
  if(el.dataset.editorField&&draftRoutine){draftRoutine[el.dataset.editorField]=el.value;return;}
  if(el.dataset.editorSlot&&draftRoutine){const slot=draftRoutine.exercises[Number(el.dataset.index)];if(slot)slot[el.dataset.editorSlot]=Number(el.value);return;}
@@ -433,8 +457,36 @@ async function handleChange(e){const el=e.target;
   if(field==='instruction0')exerciseDraft.instructions[0]=el.value;
   else if(field==='instruction1')exerciseDraft.instructions[1]=el.value;
   else if(field==='load_kind')exerciseDraft.logging.load_kind=el.value;
+  else if(field==='mode')exerciseDraft.logging.mode=el.value;
   else exerciseDraft[field]=el.value;
   return;}
+}
+function downloadJson(content,filename){
+ const blob=new Blob([content],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');
+ a.href=url;a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(url),5000);
+}
+let catalogRefreshing=false;
+async function pullCatalog(manual=false){
+ if(catalogRefreshing)return;
+ catalogRefreshing=true;
+ try{
+  if(!S.catalog){const r=await fetch('../data/catalog-v1-fingerprints.json',{cache:'no-store'});if(!r.ok)throw new Error('Baseline unavailable');await migrateLegacyCatalog(S,await r.json());}
+  const payload=await fetchCatalog();
+  const merged=await mergeCatalog(S,payload);
+  S=merged.state;
+  await persist();
+  const counts=merged.result.added;const total=Object.values(counts).reduce((n,k)=>n+k,0);
+  if(manual||total){toast(total?`Added ${counts.routines} routines, ${counts.categories} categories, ${counts.exercises} exercises`:'Shared library up to date');render();}
+ }catch(e){if(manual)toast(`Could not check shared catalog: ${e.message}`);console.info('Catalog pull:',e.message);}
+ finally{catalogRefreshing=false;}
+}
+async function handleSharedRoutine(file){if(!file)return;
+ try{
+  if(file.size>3_000_000)throw new Error('Routine file is too large');
+  const payload=JSON.parse(await file.text());validateRoutineShare(payload);
+  if(!confirm(`Import "${payload.routine.name}" with ${payload.routine.exercises.length} exercises? Only this routine is added; no personal data is replaced.`))return;
+  const result=importRoutine(S,payload,uid);await persist();toast('Routine imported to your personal library');tab='routines';goTo('routine',{id:result.routine.id});
+ }catch(e){toast(`Routine import failed: ${e.message}`);}finally{$('shared-routine-file').value='';}
 }
 async function handleBackup(file){if(!file)return;
  try{
@@ -443,7 +495,9 @@ async function handleBackup(file){if(!file)return;
   const summary=`${body.routines.length} routines, ${body.exercises.length} exercises, ${body.sessions.filter(x=>x.status==='completed').length} completed workouts`;
   if(!confirm(`Import backup containing ${summary}? This REPLACES all data currently saved on this phone. Export your current data first if you need it.`))return;
   const clean=deepClone(body);delete clean.exported_at;
-  S=clean;await persist();toast('Backup restored');switchTab('workout');
+  S=clean;
+   if(!S.catalog){try{const r=await fetch('../data/catalog-v1-fingerprints.json');if(r.ok)await migrateLegacyCatalog(S,await r.json());}catch(e){console.info('Backup imported; catalog migration will complete when online',e);}}
+   await persist();toast('Backup restored');switchTab('workout');
  }catch(e){toast(`Import failed: ${e.message}`);}finally{$('backup-file').value='';}
 }
 async function handlePhoto(file){if(!file||(!exerciseDraft&&!imageUploadTarget))return;
@@ -461,22 +515,24 @@ async function handlePhoto(file){if(!file||(!exerciseDraft&&!imageUploadTarget))
 async function boot(){
  try{
   const existing=await loadState();
-  if(existing){validateBackup(existing);S=existing;}
-  else {
+  if(existing){validateBackup(existing);S=existing;
+   if(!S.catalog){try{const res=await fetch('../data/catalog-v1-fingerprints.json');if(!res.ok)throw new Error('Missing baseline');await migrateLegacyCatalog(S,await res.json());await persist();}catch(e){console.warn('Legacy catalog migration pending (offline?):',e.message);}}
+  } else {
    const [categories,exercises,routines]=await Promise.all(['categories','exercises','routines'].map(async name=>{
     const response=await fetch(`../data/${name}.json`);if(!response.ok)throw new Error(`Could not load ${name} data`);return response.json();}));
-   S=makeInitialState({categories,exercises,routines});await persist();
+   S=makeInitialState({categories,exercises,routines});await initializeNewCatalog(S,2);await persist();
   }
   document.addEventListener('click',handleClick);
   document.addEventListener('input',handleInput);
   document.addEventListener('change',handleChange);
   $('backup-file').addEventListener('change',e=>handleBackup(e.target.files?.[0]));
+  $('shared-routine-file').addEventListener('change',e=>handleSharedRoutine(e.target.files?.[0]));
   $('exercise-photo').addEventListener('change',e=>handlePhoto(e.target.files?.[0]));
   render();
   if('serviceWorker' in navigator&&location.protocol==='https:'||('serviceWorker' in navigator && location.hostname==='localhost')){
    navigator.serviceWorker.register('service-worker.js').catch(e=>console.warn('PWA offline setup:',e));
   }
-  if(navigator.onLine && S.exercises.some(e=>!e.media?.custom_data_url&&!S.mediaRefs?.[e.id]))refreshMedia(false);
+  if(navigator.onLine){if(S.catalog)pullCatalog(false).then(()=>refreshMedia(false)).catch(e=>console.info('Shared catalog:',e));else refreshMedia(false);}
  }catch(e){console.error(e);$('main').innerHTML=`<div class="no-content"><strong>Unable to open My Little Gym</strong><p>${escapeHtml(e.message)}</p><p>Open it from an HTTPS website or a local web server, not directly as a file.</p></div>`;}
 }
 boot();

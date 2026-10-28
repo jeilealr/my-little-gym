@@ -26,15 +26,17 @@ export function monthlyHistory(sessions, count=6, asOf='2026-10-28') {
 export function exerciseProgress(state,exerciseId,metric='weight',period='3m',asOf='2026-10-28') {
  const allowed={ '1m':1,'3m':3,'6m':6,'1y':12,'all':null };
  if(!(period in allowed))throw new Error('Unknown time range');
- if(!['weight','reps'].includes(metric))throw new Error('Unknown progress metric');
+ if(!['weight','reps','duration'].includes(metric))throw new Error('Unknown progress metric');
  const threshold=allowed[period]===null?'0000-00-00':monthKeyFromOffset(asOf,-allowed[period]).concat('-').concat(asOf.slice(8));
  return completedSessions(state).filter(s=>s.started_at.slice(0,10)>=threshold)
  .flatMap(s=>s.entries.filter(e=>e.exercise_id===exerciseId).map(e=>{
-  const done=e.sets.filter(x=>x.done && Number.isInteger(x.reps)&&x.reps>=0);
+  const done=e.sets.filter(x=>x.done && ((Number.isInteger(x.reps)&&x.reps>=0)||(Number.isInteger(x.duration_seconds)&&x.duration_seconds>0)));
   const weighted=done.filter(x=>typeof x.weight_kg==='number' && Number.isFinite(x.weight_kg));
   if(!done.length)return null;
   const bestWeight=weighted.length?Math.max(...weighted.map(x=>x.weight_kg)):null;
-  const bestReps=Math.max(...done.map(x=>x.reps));
-  return {date:s.started_at.slice(0,10),sessionId:s.id,value:metric==='weight'?bestWeight:bestReps,bestWeight,bestReps,sets:done.length};
+  const bestReps=Math.max(0,...done.filter(x=>Number.isInteger(x.reps)).map(x=>x.reps));
+  const timed=done.filter(x=>Number.isInteger(x.duration_seconds)&&x.duration_seconds>0);
+  const bestDuration=timed.length?Math.max(...timed.map(x=>x.duration_seconds)):null;
+  return {date:s.started_at.slice(0,10),sessionId:s.id,value:metric==='weight'?bestWeight:metric==='duration'?bestDuration:bestReps,bestWeight,bestReps,bestDuration,sets:done.length};
  })).filter(x=>x!==null && x.value!==null).reverse();
 }

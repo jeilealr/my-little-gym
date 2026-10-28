@@ -34,7 +34,7 @@
 | Exercise | Sets × reps | Rest |
 |---|---:|---:|
 | Shoulder press machine | 3 × 8–12 | 105 s |
-| Rope triceps pushdown | 3 × 10–12 | 75 s |
+| Cable triceps pushdown (bar) | 3 × 10–12 | 75 s |
 | Dumbbell hammer curl | 3 × 10–12 | 75 s |
 | Dumbbell lateral raise (optional) | 2 × 12–15 | 60 s |
 

@@ -1,0 +1,74 @@
+{
+  "version": "0.2",
+  "source": "RepDB free-tier illustrated exercise dataset",
+  "method": "Provider catalog IDs, official technique/equipment descriptions and focused visual review of ambiguous start poses.",
+  "checked_count": 102,
+  "curated_corrected": [
+    {
+      "id": "low_to_high_cable_fly",
+      "source": "incline-dumbbell-fly",
+      "resolution": "Replaced generic cable-fly image with exact incline dumbbell fly; public label and instructions updated; internal ID retained for migration."
+    },
+    {
+      "id": "rope_triceps_pressdown",
+      "source": "tricep-pushdown",
+      "resolution": "Illustration shows bar pressdown, not rope; label and technique now specify a bar."
+    },
+    {
+      "id": "lateral_raise_machine",
+      "source": "plate-loaded-lateral-raise",
+      "resolution": "Specified the pictured plate-loaded machine."
+    },
+    {
+      "id": "one_arm_cable_row",
+      "source": "one-arm-seated-cable-row",
+      "resolution": "Specified seated cable row, matching image."
+    },
+    {
+      "id": "hip_abduction",
+      "source": "hip-abduction",
+      "resolution": "Specified seated machine; removed misleading band option."
+    },
+    {
+      "id": "sumo_squat",
+      "source": "db-sumo-squat",
+      "resolution": "Barbell source rejected; dumbbell source chosen, pictured central-dumbbell technique specified."
+    },
+    {
+      "id": "superman",
+      "source": "superman",
+      "resolution": "Specified reps (lift, pause, lower) rather than a stationary hold."
+    },
+    {
+      "id": "burpees",
+      "source": "burpees",
+      "resolution": "Primary name now describes illustrated standard burpees; alternative described as optional."
+    },
+    {
+      "id": "jumping_jacks",
+      "source": "jumping-jacks",
+      "resolution": "Primary name now describes pictured jumping jacks; step-out mentioned as an option."
+    },
+    {
+      "id": "high_knees",
+      "source": "high-knees",
+      "resolution": "Primary name now describes pictured high-knees drill; marching described as an option."
+    },
+    {
+      "id": "goblet_squat",
+      "source": "goblet-squat",
+      "resolution": "Source picture depicts a kettlebell; renamed and updated equipment/instructions to kettlebell instead of dumbbell."
+    },
+    {
+      "id": "standing_calf_raise",
+      "source": "standing-calf-raise",
+      "resolution": "Source picture shows a standing calf raise machine; updated equipment and label to machine."
+    },
+    {
+      "id": "seated_calf_raise",
+      "source": "seated-calf-raise",
+      "resolution": "Source picture shows a seated calf raise machine; updated equipment and label to machine."
+    }
+  ],
+  "limitations": "Exact equipment and end poses need physical on-device check. Provider source artwork may contain imperfections. Do not substitute similar exercises silently."
+}

@@ -1,121 +1,87 @@
-# My Little Gym — working iPhone web app (Phase 3.1)
+# My Little Gym — Version 0.2
 
-**Status: working Phase 3.1 beta, tested with automated logic, UI-flow, and static iPhone-width visual checks on 28 October 2026.**
-This is a real offline-capable Progressive Web App (PWA), **not** the earlier static mockups. It is free and has no account, subscription, server-side workout database, ads or analytics. It is not yet deployed and has not yet been tested on your physical iPhone.
+**Release:** 28 October 2026 · **Target:** iPhone Safari / Home Screen PWA · **Repository:** https://github.com/jeilealr/my-little-gym
 
-## Your personal training concept
+My Little Gym is a free, pastel-colored, private gym notebook. It has no accounts, analytics, subscription, or shared workout database. Each phone owns its own workout history and customization. The published GitHub repository supplies only the app and shared **starter catalog**. There is **no upload/push from the app to GitHub**.
 
-- **Gym reference:** Fitness First Leipzig Thomaskirche, Petersstraße 20, 04109 Leipzig, Germany.
-- **Flexible training:** No required days per week, calendar weekdays or workout duration. The routine time on screen is a *rough estimate*.
-- **Initial plan:** 20 templates: Chest A–E, Legs A–E, Back A–E and Arms & Shoulders A–E; 42 searchable exercises. Any number of new categories, exercises and routines can be added.
-- **Leg change:** Legs A now prioritizes **leg press → hip thrust/glute drive → dumbbell Romanian deadlift → seated leg curl**; all five leg variations favor glutes rather than calf raises. Calf raises remain in the searchable exercise library if desired.
-- **Routine activation:** Independently choose one routine per body-area category, with a start date and two, four, six or eight weeks, a custom end date, or indefinitely. Change/extend whenever you like.
-- **Actual gym use:** Select a workout, see its four exercises with mapped position pictures (download once when online), log the **weight and reps for each individual set**, pause or resume a workout and finish it. Workout history is a snapshot; later edits cannot change it.
+## What's new in v0.2
 
-## 1. Open it on your computer (testing)
+- **Pull-only library updates:** Settings → **Check for new shared routines**. The app also checks for updates at launch when online. Catalog updates add new categories, exercises and routines. Unmodified shared items may be refreshed, but **local edits, deleted routines, active training periods, and completed workout logs are protected**. Changed shared routines you personalized are offered as a separate optional copy.
+- **75 routines:** Five variants (A–E) for each of **15 categories** (previously 20 routines across 4 categories). The 11 new categories are Full Body, Upper Body, Lower Body, Abs & Core, Stretching & Mobility, Bodyweight / No Equipment, Push, Pull, Glutes, Cardio & Conditioning, and Functional Strength & Balance.
+- **102 exercises:** Including 60 new movements. Each starter exercise maps to a specific RepDB free-tier illustration ID; ambiguous equipment/attachment definitions were reviewed and updated to match those illustrations. See `docs/ILLUSTRATION_AUDIT.md`.
+- **Duration-based workouts:** Stretching, holds, and cardio can be logged in seconds (not as fake repetitions). Strength exercises continue to record weights and repetitions.
+- **Share one routine:** Open a routine → **Share this routine**. Export/share a routine-only JSON file containing its category and required exercise definitions, but **no history, weights, active plans, or personal settings**. On the other iPhone: Settings → **Choose routine file**. Import only **adds** a routine; it does not replace the recipient's workouts.
+- **Offline and privacy:** Workout data stays in IndexedDB on each phone. Images can be cached separately for offline use. The PWA does not sync between devices and never posts personal data to GitHub.
 
-No JavaScript framework, Node package installation, Xcode or paid service needed.
+## Categories (5 templates each)
 
-```bash
-unzip my_little_gym_phase_3.zip
-cd my_little_gym_phase_3
-python3 -m http.server 8765
-```
+| Strength splits | Flexible training | Focus and recovery | Other |
+|---|---|---|---|
+| Chest | Full Body | Abs & Core | Cardio & Conditioning |
+| Legs (glute-prioritized) | Upper Body | Glutes | Functional Strength & Balance |
+| Back | Lower Body | Stretching & Mobility | |
+| Arms & Shoulders | Bodyweight / No Equipment | | |
+| Push | | | |
+| Pull | | | |
 
-Open **http://localhost:8765/app/** in Safari or Chrome. Leave the terminal running while testing. Opening `app/index.html` directly using `file://` will not work, because it loads JSON files and registers a service worker.
+The categories are choices, not a mandatory schedule. You can train any number of days per week, change a selected routine when you wish, or run an individual routine just once.
 
-## 2. Put it on your iPhone (free, no App Store)
+## Upgrade the existing GitHub Pages app
 
-An iPhone needs a reachable **HTTPS** URL to install this PWA. GitHub Pages is a convenient free option.
+**Back up your data on each iPhone before deploying.** In the currently installed app: gear → **Export my data** → save the resulting `.json` securely in Files/iCloud Drive. These private backups must **not** go in your public repository.
 
-1. Create a new repository on GitHub, e.g. `my-little-gym`, and set it **public** so GitHub Pages is available on a free personal account. **Upload the unzipped project contents** into the repository root, preserving the `app/` and `data/` directories. Do not upload your personal exported workout backups.
-2. In the repository open **Settings → Pages → Build and deployment → Deploy from a branch**. Select `main`, folder `/(root)`, then Save.
-3. After Pages publishes, visit `https://YOUR-USERNAME.github.io/my-little-gym/app/` in **Safari** on your iPhone (adjust for your actual repository name).
-4. In Safari tap **Share → Add to Home Screen**, enable **Open as Web App** when offered, then tap **Add**.
-5. Open the new **Little Gym** Home Screen icon. In **Routines** activate whatever you want to train. The library intentionally does not force any routines to be active on first install.
-6. Before relying on offline pictures, while connected to Wi-Fi, open **Settings (gear) → Find exercise illustrations → Download found illustrations for offline use**. Then put the phone in airplane mode and test it. The first setup and illustration download require Internet.
+1. Download the `my_little_gym_v0_2.zip` package from ChatGPT, and unzip it **outside** the Git working tree.
+2. Copy the contents of the unpacked `my_little_gym_v0_2/` folder into the root of your local `my-little-gym` Git checkout. **Merge/overwrite app files**, but keep your existing `.git/` directory.
+3. Review changes and publish:
 
-**Important:** GitHub Pages publishes your *app code and seeded sample routines* publicly. Your actual workout logs and activation choices stay in IndexedDB on your iPhone unless you explicitly export them; do **not** put your JSON backup files in a public GitHub repository. A hosted site can be updated by uploading new code files, but your existing local data is independent of the published code.
+   ```bash
+   cd /path/to/my-little-gym
+   git status
+   python3 tests/validate.py
+   node --test tests/*.test.mjs
+   node tests/ui-smoke.mjs
+   git add -A
+   git commit -m "My Little Gym v0.2: shared catalog, 75 routines and routine sharing"
+   git push origin main
+   ```
 
-## 3. First steps inside the app
+4. GitHub Pages updates the site at **https://jeilealr.github.io/my-little-gym/app/**. Open your installed app again on each iPhone while connected to Wi-Fi. If it still shows the previous interface, close it completely and reopen it a second time to allow the new service worker to take over. Do **not** delete the app or clear website data just to update it.
+5. Go to gear → **Shared routine library** → **Check for new shared routines**. On an older install, the catalog migrates from the original baseline and brings in the 11 additional categories and 55 new routines, preserving local records.
+6. Go to gear → **Exercise illustrations** → **Find exercise illustrations**, followed by **Download found illustrations for offline use**. Confirm that movements actually show their correct equipment, and test in airplane mode before relying on offline use.
 
-- **Routines → Legs → Legs A → Activate routine → choose duration** (e.g. four weeks or Until I change it).
-- **Workout → Legs → Start workout → tap an exercise → enter kg and repetitions per set → ✓**.
-- Log all completed sets and return to the workout list. **Finish workout** stores an immutable history snapshot; any uncompleted sets will not be counted as completed.
-- **History → overview** to filter Chest/Legs/Back/Arms and see workouts over six months. **Yearly view** shows 12 months. Tap a past workout, then an exercise, for weight/repetition progress with 1M/3M/6M/1Y/All filters.
-- In **Routines** you can duplicate/edit exercises, add new routines and categories (new custom exercises require a picture), change the active routine or extend its duration, all without deleting previous records.
-- You can also **Train this routine once** directly from the library without making it active.
+**Important:** A code deployment does not change the domain, IndexedDB database name or backup schema (still v3). This allows the current app to retain existing local workout data when deployed at the **same URL**. Importing a **full backup**, however, still *replaces* all local data on that particular phone; single-routine sharing is a separate, additive workflow.
 
-## 4. Storage, privacy and backups
+## How to add shared catalog content later
 
-Everything personal is stored in **IndexedDB** within this device/browser. There is no cloud sync or automatic backup. If you clear website/app data, change the site's origin, remove the PWA or replace the phone, you may lose data.
+The GitHub repo's published `data/categories.json`, `data/exercises.json` and `data/routines.json` constitute the **shared catalog**. All records need stable, unique IDs. Every routine must reference existing category and exercise IDs; every exercise must have accurate instructions and an exact exercise illustration mapping. Update `data/catalog.json`'s `version` when publishing a revised catalog and run all validation tests. Commit and push. The installed apps **pull** this content on their next online check; no personal data is sent back.
 
-**Back up regularly:** top-right gear → **Export my data**. Save the JSON file in your iPhone Files app or somewhere safe. To restore, **Choose backup file** and confirm. Import **replaces**, rather than merges with, current data, with a confirmation prompt. Images you add to your own custom exercises are compressed and included in backups. Backups use schema version 3.
+**Conflict policy:** A personal edit or deletion beats the shared catalog. If an updated shared routine conflicts with an edited local routine, users can install the new one as a **separate copy**. We don't silently overwrite the edited version. Changing a selected routine never rewrites previous workout sessions.
 
-Exercise illustrations are obtained from the publisher's free public dataset using a curated list of 42 starter-exercise IDs. Image and index requests (plus ordinary IP/network information) reach GitHub's raw-content infrastructure; **your logged workouts, sets, routine preferences and backup files are not uploaded**. If unavailable, the app displays a placeholder and your original technique cues. Only images you explicitly cache can be relied upon offline; Safari storage may still be evicted by iOS.
+To share a routine only with one other person instead, open it in **Routines** → **Share this routine** and send the exported file using iOS Share or Files. That person's app imports it under **Settings → Import a shared routine**. This file does not include your set history, session notes, or routine activation periods. Sharing does not publish it to the repository.
 
-## 5. Project layout
+## On-device storage and users
 
-```text
-my_little_gym_phase_3/
-  index.html                 # Opens app/ (GitHub Pages root entry)
-  app/
-    index.html               # The actual application shell
-    app.js                   # All three tabs, editors, activations, logging, history
-    domain.mjs               # Pure date, session and backup logic
-    history.mjs              # Monthly and per-exercise trend calculations
-    db.mjs                   # IndexedDB persistence
-    media.mjs                # Curated 42 exercise-to-image mappings, license-aware lookup/cache
-    styles.css               # Pastel mobile styling
-    manifest.webmanifest     # Home Screen installation
-    service-worker.js        # App-shell + image caching for offline use
-    assets/                  # Original app icons and fallback illustration
-  data/
-    categories.json          # Starter categories
-    exercises.json           # Our 42 original exercise summaries and cues
-    routines.json            # 20 user-editable starter templates
-    app_defaults.json        # Flexible training defaults
-    suggested_plan.json      # Suggestions, not automatic activations
-  docs/                      # Prior phases, revised glute plan, licensing notes
-  tests/                     # Domain, seed and smoke tests
-```
+Two separate iPhones → two separate private local app databases, even though both use the same site URL and starter catalog. There is **no sign-in**, **no automatic cross-device sync**, and no support for two profiles sharing a single iPhone. Export backups regularly to prevent loss from device replacement or cleared website storage.
 
-## 6. Developer tests
+## Images and licensing
 
-From the project root:
+All 102 built-in exercises have a curated exercise-to-RepDB ID mapping. The checked public catalog contains the expected image filenames; several ambiguous illustrations were manually inspected and exercise names, equipment and directions corrected. The release intentionally **does not bundle RepDB's catalog as a redistributable dataset**. It fetches provider images for in-app use with visible attribution: [Exercise data by RepDB (repdb.co)](https://repdb.co). See their [free-tier license](https://github.com/RepDB/exercise-dataset/blob/main/LICENSE-DATA.md).
 
-```bash
-python3 tests/validate.py
-node --test tests/domain.test.mjs
-node tests/ui-smoke.mjs
-```
+This is **not** a guarantee that every provider image is medically or anatomically perfect; users should check the picture against the movement cues. Image retrieval depends on the provider, and offline use requires caching. When an old saved image points to the wrong movement after an update, the app will not display it; it shows a missing-image placeholder until the correct one can be fetched or you supply an approved picture. Full physical iPhone image QA remains necessary.
 
-- Unit tests cover training-day flexibility, calendar date boundaries including daylight-saving changes, routine replacement independence, glute substitutions, immutable history and backups.
-- The UI smoke test simulates routine activation, set editing, workout finish/history, template revision, new routine and custom category.
-- The automated tests passed in the generation environment. **A physical iPhone Safari/standalone PWA usability and offline-image test remains necessary.** Localhost navigation was blocked by browser policy, so static app HTML was rendered at iPhone width for layout QA; this is not a claim of a completed Safari test.
+## Technical layout
 
-## 7. Exercise images and usage rights
+- `app/app.js` — screens, controls, routines, sessions, workout History and sharing actions
+- `app/domain.mjs` — routine activation, workout snapshots, backups, set tracking
+- `app/catalog.mjs` — versioned pull-only catalog sync, migration from v0.1, conflict protection
+- `app/share.mjs` — routine-only export/import and format validation
+- `app/media.mjs` — specific exercise image mappings, licensed fetch and offline image caching
+- `app/service-worker.js` — offline app-shell cache, network-first shared JSON fetch
+- `data/catalog.json` — shared catalog version manifest
+- `data/*.json` — 15 categories, 102 exercises, 75 routines, original-v0.1 baseline fingerprints
+- `docs/V0_2_RELEASE_NOTES.md` — detailed update rules, image audit and known limitations
+- `tests/` — seed validation, regression tests for v0.1 migration, sharing and UI workflows
 
-We intentionally **do not redistribute RepDB's catalog as a dataset** inside this ZIP. The app fetches the publisher's catalog and matched illustrations in the browser for in-app use. Images may not always be available; some exercises have no exact match.
+For local testing, run `python3 -m http.server 8765` from the repository root, then open **http://localhost:8765/app/**. Avoid opening HTML as `file://`.
 
-Attribution is visible in **Settings → About**: [Exercise data by RepDB (repdb.co)](https://repdb.co).
-Official [RepDB free-tier terms](https://github.com/RepDB/exercise-dataset/blob/main/LICENSE-DATA.md) allow personal/commercial *in-app use* with attribution; prohibit repackaging the dataset and using their images as AI-generation references. The app contains no premium example illustrations and no AI derivations from RepDB art.
-
-The gym confirms a Booty Zone with Glutebuilder equipment but **not** a list of exact machine models. Machine selections are suggestions subject to what you find at Thomaskirche. Training material is informational and is not medical assessment; seek coaching for unfamiliar machines and adjust movements if painful.
-
-## 8. Known limitations in this beta
-
-- No cloud sync between devices (privacy-first deliberate choice).
-- Routine variants A–E have shared main movements; switching often may make progress comparison harder.
-- All 42 starter exercises have catalog mappings, verified against the public image-file list. Four use closely related exercise illustrations with visible explanatory notes. If GitHub cannot be reached, an image has not been cached, or an image fails to load, a clearly flagged missing-image fallback may still appear. Use Settings to locate missing images or add your own photograph. The app has not had an end-to-end image-load test on the physical iPhone.
-- No live equipment availability for Thomaskirche.
-- This is a lightweight browser PWA, not a compiled Swift app or App Store download.
-- The app has not been installed and tested on your actual iPhone; please verify Safari install, offline caching and number-input keyboard behavior before relying on it in the gym.
-
-## Phase 3.1 update (28 Oct 2026)
-
-- Fixed the screenshot's missing neutral-grip pulldown by mapping it to RepDB's `v-bar-lat-pulldown` image. Fixed single-arm dumbbell row with the provider's `single-arm-db-row` ID. Audited all 42 starter exercises: 42 mappings, 41 distinct catalog exercises (one cable-fly image is shared for an angle variation). All referenced source image filenames were checked in the publisher's public Git tree.
-- When online, the app now refreshes missing images after initial load, even if some images were already mapped previously, and updates the visible thumbnails when the network request finishes.
-- Settings shows an image-coverage count and identifies any unresolved exercises; you can add your own picture for an existing exercise. New custom exercises require a photo before saving. A remote source can still fail or be unavailable offline until cached.
-- Added History category filters, a six-month activity chart, a 12-month trends page, exercise weight-versus-reps charts, 1M/3M/6M/1Y/All date filters, and prior per-set results. Charts are generated from *your own completed workouts only*.
-- This version retains database schema v3 and the same site origin/path structure. To upgrade an existing installation, upload the new `app/` files and refresh the installed web app on the **same HTTPS domain and path**. Your existing locally stored workouts should remain, but export a backup before replacing code. The service worker was version-bumped to refresh cached application assets.
+The training content is informational, not a personalized medical prescription. Specific machine inventory at Fitness First Leipzig Thomaskirche is not verified; adapt based on actual equipment and stop exercises that cause pain.

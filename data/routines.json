@@ -1138,5 +1138,3262 @@
     "status": "optional_variation",
     "equipment_note": "Availability of individual machines at Leipzig Thomaskirche is not confirmed; use substitutions or ask staff.",
     "activation_default": null
+  },
+  {
+    "id": "full_body-a",
+    "category_id": "full_body",
+    "variation": "A",
+    "name": "Full Body A — Foundations",
+    "description": "Balanced squat, push, pull and trunk. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "leg_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "chest_press_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "lat_pulldown",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "full_body-b",
+    "category_id": "full_body",
+    "variation": "B",
+    "name": "Full Body B — Dumbbell day",
+    "description": "Practical free-weight full-body training. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "goblet_squat",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "incline_dumbbell_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "single_arm_dumbbell_row",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "dead_bug",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "full_body-c",
+    "category_id": "full_body",
+    "variation": "C",
+    "name": "Full Body C — Posterior chain",
+    "description": "Hinge, press and row plus core. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "db_rdl",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "push_up",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "seated_cable_row",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hanging_knee_raise",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "full_body-d",
+    "category_id": "full_body",
+    "variation": "D",
+    "name": "Full Body D — Glutes & upper",
+    "description": "Glute drive and upper-body strength. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "hip_thrust_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "machine_shoulder_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "neutral_grip_pulldown",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "side_plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "full_body-e",
+    "category_id": "full_body",
+    "variation": "E",
+    "name": "Full Body E — Balanced unilateral",
+    "description": "Single-side leg work and upper-body balance. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "bulgarian_split_squat",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "flat_dumbbell_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "one_arm_cable_row",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "bird_dog",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "upper_body-a",
+    "category_id": "upper_body",
+    "variation": "A",
+    "name": "Upper Body A — Balanced upper",
+    "description": "Chest, back and shoulders. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "chest_press_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "lat_pulldown",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "machine_shoulder_press",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "db_hammer_curl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "upper_body-b",
+    "category_id": "upper_body",
+    "variation": "B",
+    "name": "Upper Body B — Dumbbells",
+    "description": "Free-weight chest and pulling. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "flat_dumbbell_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "single_arm_dumbbell_row",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "db_shoulder_press",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "rope_triceps_pressdown",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "upper_body-c",
+    "category_id": "upper_body",
+    "variation": "C",
+    "name": "Upper Body C — Back emphasis",
+    "description": "Two pulling angles and a press. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "chest_supported_machine_row",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "neutral_grip_pulldown",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "incline_dumbbell_press",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "face_pull",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "upper_body-d",
+    "category_id": "upper_body",
+    "variation": "D",
+    "name": "Upper Body D — Chest & arms",
+    "description": "Push with biceps and triceps. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "barbell_bench_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "seated_cable_row",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "ez_bar_curl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "cable_overhead_triceps_extension",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "upper_body-e",
+    "category_id": "upper_body",
+    "variation": "E",
+    "name": "Upper Body E — Shoulder balance",
+    "description": "Shoulders plus horizontal push and pull. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "machine_shoulder_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "chest_press_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "lat_pulldown",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "reverse_pec_deck",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "lower_body-a",
+    "category_id": "lower_body",
+    "variation": "A",
+    "name": "Lower Body A — Glutes & quads",
+    "description": "Squat pattern, hinge and glute drive. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "leg_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hip_thrust_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "db_rdl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "seated_leg_curl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "lower_body-b",
+    "category_id": "lower_body",
+    "variation": "B",
+    "name": "Lower Body B — Single-leg focus",
+    "description": "Balance and unilateral leg strength. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "bulgarian_split_squat",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "single_leg_hip_thrust",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "step_ups",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "leg_extension",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "lower_body-c",
+    "category_id": "lower_body",
+    "variation": "C",
+    "name": "Lower Body C — Posterior chain",
+    "description": "Glutes and hamstrings. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "db_rdl",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hip_thrust_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "seated_leg_curl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "cable_pull_through",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "lower_body-d",
+    "category_id": "lower_body",
+    "variation": "D",
+    "name": "Lower Body D — Quad emphasis",
+    "description": "Quads with glute accessories. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "goblet_squat",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "leg_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "leg_extension",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "glute_bridge",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "lower_body-e",
+    "category_id": "lower_body",
+    "variation": "E",
+    "name": "Lower Body E — Machine-friendly",
+    "description": "Machine exercises with full lower-body coverage. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "leg_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hip_thrust_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "lying_leg_curl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hip_abduction",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "abs_core-a",
+    "category_id": "abs_core",
+    "variation": "A",
+    "name": "Abs & Core A — Core foundations",
+    "description": "Basic anti-extension and trunk control. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 15,
+      "max": 30
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "dead_bug",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "bird_dog",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "side_plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "abs_core-b",
+    "category_id": "abs_core",
+    "variation": "B",
+    "name": "Abs & Core B — Abs & obliques",
+    "description": "Flexion and rotation with controlled form. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 15,
+      "max": 30
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "reverse_crunch",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "bicycle_crunch",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "side_plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "russian_twist",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "abs_core-c",
+    "category_id": "abs_core",
+    "variation": "C",
+    "name": "Abs & Core C — Gym core",
+    "description": "Cable-resistance core exercises. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 15,
+      "max": 30
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "cable_crunch",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "pallof_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hanging_knee_raise",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "abs_core-d",
+    "category_id": "abs_core",
+    "variation": "D",
+    "name": "Abs & Core D — Stability",
+    "description": "Deep trunk control and anti-rotation. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 15,
+      "max": 30
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "bird_dog",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "side_plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "pallof_press",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hollow_hold",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "abs_core-e",
+    "category_id": "abs_core",
+    "variation": "E",
+    "name": "Abs & Core E — Core challenge",
+    "description": "More demanding core exercises. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 15,
+      "max": 30
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "ab_wheel",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hanging_knee_raise",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hollow_hold",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "mountain_climbers",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "stretch_mobility-a",
+    "category_id": "stretch_mobility",
+    "variation": "A",
+    "name": "Stretching & Mobility A — After gym",
+    "description": "Gentle total-body cool down. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 10,
+      "max": 22
+    },
+    "warmup_minutes": 2,
+    "exercises": [
+      {
+        "exercise_id": "standing_quad_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "bench_hamstring_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "doorway_chest_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "childs_pose",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "stretch_mobility-b",
+    "category_id": "stretch_mobility",
+    "variation": "B",
+    "name": "Stretching & Mobility B — Hips & glutes",
+    "description": "Hip-focused range of motion. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 10,
+      "max": 22
+    },
+    "warmup_minutes": 2,
+    "exercises": [
+      {
+        "exercise_id": "kneeling_hip_flexor",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "pigeon_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "butterfly_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "bench_couch_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "stretch_mobility-c",
+    "category_id": "stretch_mobility",
+    "variation": "C",
+    "name": "Stretching & Mobility C — Back & shoulders",
+    "description": "Calm upper-body mobility. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 10,
+      "max": 22
+    },
+    "warmup_minutes": 2,
+    "exercises": [
+      {
+        "exercise_id": "cat_cow",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "thread_needle",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "cross_body_shoulder",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "childs_pose",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "stretch_mobility-d",
+    "category_id": "stretch_mobility",
+    "variation": "D",
+    "name": "Stretching & Mobility D — Full-body mobility",
+    "description": "Mobilize hips, spine and shoulders. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 10,
+      "max": 22
+    },
+    "warmup_minutes": 2,
+    "exercises": [
+      {
+        "exercise_id": "worlds_greatest_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "downward_dog",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "cat_cow",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "seated_spinal_twist",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "stretch_mobility-e",
+    "category_id": "stretch_mobility",
+    "variation": "E",
+    "name": "Stretching & Mobility E — Desk recovery",
+    "description": "Relax chest and hips. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 10,
+      "max": 22
+    },
+    "warmup_minutes": 2,
+    "exercises": [
+      {
+        "exercise_id": "doorway_chest_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "kneeling_hip_flexor",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "bench_hamstring_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "standing_calf_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "bodyweight-a",
+    "category_id": "bodyweight",
+    "variation": "A",
+    "name": "Bodyweight / No Equipment A — No equipment",
+    "description": "Balanced at-home basic strength. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "bodyweight_squat",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "push_up",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "reverse_lunge",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "bodyweight-b",
+    "category_id": "bodyweight",
+    "variation": "B",
+    "name": "Bodyweight / No Equipment B — Lower-body bodyweight",
+    "description": "Glutes, legs and core. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "glute_bridge",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "walking_lunge",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "bodyweight_squat",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "wall_sit",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "bodyweight-c",
+    "category_id": "bodyweight",
+    "variation": "C",
+    "name": "Bodyweight / No Equipment C — Upper body & core",
+    "description": "Pressing and trunk control. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "push_up",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "inchworm",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "bird_dog",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "side_plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "bodyweight-d",
+    "category_id": "bodyweight",
+    "variation": "D",
+    "name": "Bodyweight / No Equipment D — Low-impact movement",
+    "description": "Accessible home workout. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "bodyweight_squat",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "reverse_lunge",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "glute_bridge",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "dead_bug",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "bodyweight-e",
+    "category_id": "bodyweight",
+    "variation": "E",
+    "name": "Bodyweight / No Equipment E — Bodyweight circuit",
+    "description": "More active total-body challenge. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "burpees",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "jumping_jacks",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "mountain_climbers",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hollow_hold",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "push-a",
+    "category_id": "push",
+    "variation": "A",
+    "name": "Push A — Push foundations",
+    "description": "Chest, shoulders and triceps. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "chest_press_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "machine_shoulder_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "pec_deck",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "rope_triceps_pressdown",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "push-b",
+    "category_id": "push",
+    "variation": "B",
+    "name": "Push B — Dumbbell push",
+    "description": "Free-weight chest and shoulders. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "flat_dumbbell_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "incline_dumbbell_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "db_shoulder_press",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "db_lateral_raise",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "push-c",
+    "category_id": "push",
+    "variation": "C",
+    "name": "Push C — Upper-chest push",
+    "description": "Incline focus plus triceps. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "incline_dumbbell_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "machine_shoulder_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "low_to_high_cable_fly",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "cable_overhead_triceps_extension",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "push-d",
+    "category_id": "push",
+    "variation": "D",
+    "name": "Push D — Cable & machine",
+    "description": "Stable pressing with cable isolation. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "chest_press_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "machine_shoulder_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "cable_fly",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "rope_triceps_pressdown",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "push-e",
+    "category_id": "push",
+    "variation": "E",
+    "name": "Push E — Balanced push",
+    "description": "Horizontal and vertical push balance. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "barbell_bench_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "db_shoulder_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "lateral_raise_machine",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "machine_triceps_extension",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "pull-a",
+    "category_id": "pull",
+    "variation": "A",
+    "name": "Pull A — Pull foundations",
+    "description": "Vertical and horizontal pulling. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "lat_pulldown",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "chest_supported_machine_row",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "face_pull",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "db_hammer_curl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "pull-b",
+    "category_id": "pull",
+    "variation": "B",
+    "name": "Pull B — Dumbbell pull",
+    "description": "Unilateral back focus. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "single_arm_dumbbell_row",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "neutral_grip_pulldown",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "reverse_pec_deck",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "ez_bar_curl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "pull-c",
+    "category_id": "pull",
+    "variation": "C",
+    "name": "Pull C — Cable pull",
+    "description": "Controlled cable exercises. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "seated_cable_row",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "straight_arm_cable_pulldown",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "face_pull",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "cable_biceps_curl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "pull-d",
+    "category_id": "pull",
+    "variation": "D",
+    "name": "Pull D — Upper-back pull",
+    "description": "Back and rear delts. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "chest_supported_machine_row",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "seated_cable_row",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "reverse_pec_deck",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "db_hammer_curl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "pull-e",
+    "category_id": "pull",
+    "variation": "E",
+    "name": "Pull E — Pull variety",
+    "description": "Assisted pull-ups and rows. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "assisted_pull_up",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "one_arm_cable_row",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "lat_pulldown",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "cable_biceps_curl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "glutes-a",
+    "category_id": "glutes",
+    "variation": "A",
+    "name": "Glutes A — Glute drive",
+    "description": "Machine-based glute strength. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "hip_thrust_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "high_foot_leg_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hip_abduction",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "cable_kickback",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "glutes-b",
+    "category_id": "glutes",
+    "variation": "B",
+    "name": "Glutes B — Hinge & thrust",
+    "description": "Hamstring and glute emphasis. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "db_rdl",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hip_thrust_machine",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "single_leg_hip_thrust",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "glute_kickback",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "glutes-c",
+    "category_id": "glutes",
+    "variation": "C",
+    "name": "Glutes C — Single-side glutes",
+    "description": "Unilateral glute work. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "bulgarian_split_squat",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "step_ups",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "single_leg_hip_thrust",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hip_abduction",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "glutes-d",
+    "category_id": "glutes",
+    "variation": "D",
+    "name": "Glutes D — Cable glutes",
+    "description": "Cable and dumbbell options. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "cable_pull_through",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "cable_kickback",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "db_hip_thrust",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "sumo_squat",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "glutes-e",
+    "category_id": "glutes",
+    "variation": "E",
+    "name": "Glutes E — Machine & free weights",
+    "description": "Glute emphasis with different tools. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "smith_hip_thrust",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "leg_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "db_rdl",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "hip_abduction",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "conditioning-a",
+    "category_id": "conditioning",
+    "variation": "A",
+    "name": "Cardio & Conditioning A — Easy cardio mix",
+    "description": "Gentle stationary cardio plus low-impact movement. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 12,
+      "max": 32
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "stationary_bike",
+        "sets": 1,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 300,
+        "seconds_max": 600,
+        "rest_seconds": 60,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "rowing_machine",
+        "sets": 1,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 300,
+        "seconds_max": 600,
+        "rest_seconds": 60,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "jumping_jacks",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 45,
+        "seconds_max": 60,
+        "rest_seconds": 45,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "high_knees",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 45,
+        "seconds_max": 60,
+        "rest_seconds": 45,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "conditioning-b",
+    "category_id": "conditioning",
+    "variation": "B",
+    "name": "Cardio & Conditioning B — Cardio intervals",
+    "description": "Moderate intervals with active rest as needed. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 12,
+      "max": 32
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "rowing_machine",
+        "sets": 1,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 300,
+        "seconds_max": 600,
+        "rest_seconds": 60,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "jump_rope",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 45,
+        "seconds_max": 60,
+        "rest_seconds": 45,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "air_bike",
+        "sets": 1,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 300,
+        "seconds_max": 600,
+        "rest_seconds": 60,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "high_knees",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 45,
+        "seconds_max": 60,
+        "rest_seconds": 45,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "conditioning-c",
+    "category_id": "conditioning",
+    "variation": "C",
+    "name": "Cardio & Conditioning C — Low-impact day",
+    "description": "Steady equipment-based movement. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 12,
+      "max": 32
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "stationary_bike",
+        "sets": 1,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 300,
+        "seconds_max": 600,
+        "rest_seconds": 60,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "stair_climber",
+        "sets": 1,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 300,
+        "seconds_max": 600,
+        "rest_seconds": 60,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "rowing_machine",
+        "sets": 1,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 300,
+        "seconds_max": 600,
+        "rest_seconds": 60,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "step_ups",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "conditioning-d",
+    "category_id": "conditioning",
+    "variation": "D",
+    "name": "Cardio & Conditioning D — Bodyweight conditioning",
+    "description": "No-machine aerobic circuit. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 12,
+      "max": 32
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "jumping_jacks",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 45,
+        "seconds_max": 60,
+        "rest_seconds": 45,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "mountain_climbers",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 45,
+        "seconds_max": 60,
+        "rest_seconds": 45,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "high_knees",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 45,
+        "seconds_max": 60,
+        "rest_seconds": 45,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "burpees",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 45,
+        "seconds_max": 60,
+        "rest_seconds": 45,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "conditioning-e",
+    "category_id": "conditioning",
+    "variation": "E",
+    "name": "Cardio & Conditioning E — Mixed energy",
+    "description": "Alternate a machine and floor movement. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 12,
+      "max": 32
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "rowing_machine",
+        "sets": 1,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 300,
+        "seconds_max": 600,
+        "rest_seconds": 60,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "step_ups",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 12,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "jump_rope",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 45,
+        "seconds_max": 60,
+        "rest_seconds": 45,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "mountain_climbers",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 45,
+        "seconds_max": 60,
+        "rest_seconds": 45,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "functional_balance-a",
+    "category_id": "functional_balance",
+    "variation": "A",
+    "name": "Functional Strength & Balance A — Everyday strength",
+    "description": "Carry, hinge, squat and stability. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "suitcase_carry",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "goblet_squat",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "bird_dog",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "step_up_balance",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "starter",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "functional_balance-b",
+    "category_id": "functional_balance",
+    "variation": "B",
+    "name": "Functional Strength & Balance B — Single-leg balance",
+    "description": "Unilateral and anti-rotation. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "single_leg_rdl",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "step_up_balance",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "pallof_press",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "side_plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "functional_balance-c",
+    "category_id": "functional_balance",
+    "variation": "C",
+    "name": "Functional Strength & Balance C — Hip power & stability",
+    "description": "Hinge plus controlled trunk work. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "kettlebell_swing",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "glute_bridge",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "suitcase_carry",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "dead_bug",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "functional_balance-d",
+    "category_id": "functional_balance",
+    "variation": "D",
+    "name": "Functional Strength & Balance D — Functional mobility",
+    "description": "Mobility with strength control. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "cossack_squat",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "step_ups",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "worlds_greatest_stretch",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "plank",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "optional",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
+  },
+  {
+    "id": "functional_balance-e",
+    "category_id": "functional_balance",
+    "variation": "E",
+    "name": "Functional Strength & Balance E — Gym essentials",
+    "description": "Accessible mixed-strength training. Flexible: finish the essentials first; the final movement is optional.",
+    "estimated_minutes": {
+      "min": 25,
+      "max": 55
+    },
+    "warmup_minutes": 5,
+    "exercises": [
+      {
+        "exercise_id": "leg_press",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "chest_supported_machine_row",
+        "sets": 3,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "essential",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "suitcase_carry",
+        "sets": 2,
+        "reps_min": 1,
+        "reps_max": 1,
+        "seconds_min": 30,
+        "seconds_max": 45,
+        "rest_seconds": 30,
+        "priority": "essential",
+        "target_reps_in_reserve": "not_applicable",
+        "substitution_allowed": true
+      },
+      {
+        "exercise_id": "pallof_press",
+        "sets": 2,
+        "reps_min": 8,
+        "reps_max": 15,
+        "rest_seconds": 75,
+        "priority": "optional",
+        "target_reps_in_reserve": "1-3",
+        "substitution_allowed": true
+      }
+    ],
+    "status": "variation",
+    "equipment_note": "Choose equivalent equipment if the listed machine is unavailable. No specific machine inventory at Leipzig Thomaskirche has been verified.",
+    "activation_default": null
   }
 ]

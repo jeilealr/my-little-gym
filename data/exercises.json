@@ -120,16 +120,17 @@
   },
   {
     "id": "low_to_high_cable_fly",
-    "name": "Low-to-high cable fly",
-    "name_de": "Kabelzug-Flys von unten nach oben",
+    "name": "Incline dumbbell fly",
+    "name_de": "Schrägbank-Fliegende mit Kurzhanteln",
     "primary_muscles": [
       "chest"
     ],
-    "equipment": "cable station",
+    "equipment": "Incline bench + dumbbells",
     "level": "beginner",
     "instructions": [
-      "Set handles low and keep a staggered stance.",
-      "Sweep hands upward and inward without arching the lower back."
+      "Lie on an incline bench holding dumbbells above the chest with palms facing inward.",
+      "Keep a gentle bend in the elbows as you open your arms to the sides.",
+      "Stop at a comfortable chest stretch, then bring the weights together in an arc without pressing."
     ],
     "alternative_exercise_ids": [
       "cable_fly"
@@ -357,16 +358,16 @@
   },
   {
     "id": "standing_calf_raise",
-    "name": "Standing calf raise",
+    "name": "Standing calf raise (machine)",
     "name_de": "Wadenheben stehend",
     "primary_muscles": [
       "calves"
     ],
-    "equipment": "calf raise machine or dumbbells",
+    "equipment": "standing calf raise machine",
     "level": "beginner",
     "instructions": [
-      "Keep feet planted on the balls of your feet.",
-      "Lift heels steadily, pause briefly, and lower all the way."
+      "Stand on the machine platform with the balls of your feet supported and shoulders under the pads.",
+      "Lift your heels steadily, pause, then lower under control."
     ],
     "alternative_exercise_ids": [
       "seated_calf_raise"
@@ -386,16 +387,16 @@
   },
   {
     "id": "seated_calf_raise",
-    "name": "Seated calf raise",
+    "name": "Seated calf raise (machine)",
     "name_de": "Wadenheben sitzend",
     "primary_muscles": [
       "calves"
     ],
-    "equipment": "calf raise machine or dumbbells",
+    "equipment": "seated calf raise machine",
     "level": "beginner",
     "instructions": [
-      "Sit tall with knees bent and feet supported.",
-      "Lift heels through a controlled range and slowly lower."
+      "Sit at the calf raise machine with the thigh pads adjusted comfortably.",
+      "Raise your heels to lift the load, then lower under control."
     ],
     "alternative_exercise_ids": [
       "standing_calf_raise"
@@ -415,17 +416,18 @@
   },
   {
     "id": "goblet_squat",
-    "name": "Goblet squat",
-    "name_de": "Goblet Kniebeuge",
+    "name": "Kettlebell goblet squat",
+    "name_de": "Kettlebell-Goblet-Kniebeuge",
     "primary_muscles": [
       "quads",
       "glutes"
     ],
-    "equipment": "dumbbell",
+    "equipment": "kettlebell",
     "level": "beginner",
     "instructions": [
-      "Hold a dumbbell securely at chest level.",
-      "Sit down between the hips, keeping heels grounded and knees tracking toes."
+      "Hold a kettlebell with both hands at chest height.",
+      "Sit down between the hips, keeping heels grounded and knees tracking toes.",
+      "Stand tall while keeping the weight close to your chest."
     ],
     "alternative_exercise_ids": [
       "leg_press"
@@ -440,7 +442,7 @@
     },
     "logging": {
       "unit": "kg",
-      "load_kind": "per_dumbbell"
+      "load_kind": "machine_or_total_load"
     }
   },
   {
@@ -775,17 +777,18 @@
   },
   {
     "id": "one_arm_cable_row",
-    "name": "One-arm cable row",
-    "name_de": "Einarmiges Kabelrudern",
+    "name": "One-arm seated cable row",
+    "name_de": "Einarmiges Kabelrudern sitzend",
     "primary_muscles": [
       "upper_back",
       "lats"
     ],
-    "equipment": "cable station",
+    "equipment": "Seated cable-row station",
     "level": "beginner",
     "instructions": [
-      "Stand or sit steady and keep torso square.",
-      "Pull the elbow back without rotating the trunk; return slowly."
+      "Sit at the cable row station and hold one handle with the arm extended.",
+      "Pull your elbow toward your lower ribs without twisting your shoulders.",
+      "Extend in control and complete both sides."
     ],
     "alternative_exercise_ids": [
       "single_arm_dumbbell_row"
@@ -956,16 +959,17 @@
   },
   {
     "id": "rope_triceps_pressdown",
-    "name": "Rope triceps pushdown",
-    "name_de": "Trizepsdrücken am Kabelzug",
+    "name": "Cable triceps pushdown (bar)",
+    "name_de": "Kabel-Trizepsdrücken mit Stange",
     "primary_muscles": [
       "triceps"
     ],
-    "equipment": "high cable station",
+    "equipment": "High cable station + bar attachment",
     "level": "beginner",
     "instructions": [
-      "Keep upper arms close to the ribs.",
-      "Extend elbows without leaning your body onto the cable; return slowly."
+      "Attach a short straight bar to the upper cable pulley and stand facing it.",
+      "Hold your upper arms near your body and press the bar down by extending your elbows.",
+      "Return slowly without swinging or shifting your shoulders."
     ],
     "alternative_exercise_ids": [
       "machine_triceps_extension"
@@ -1074,16 +1078,17 @@
   },
   {
     "id": "lateral_raise_machine",
-    "name": "Lateral raise machine",
-    "name_de": "Seitheben Maschine",
+    "name": "Plate-loaded lateral raise",
+    "name_de": "Seitheben am Scheiben-Gerät",
     "primary_muscles": [
       "side_delts"
     ],
-    "equipment": "lateral raise machine",
+    "equipment": "Plate-loaded lateral raise machine",
     "level": "beginner",
     "instructions": [
-      "Adjust seat and pads to fit the shoulders.",
-      "Lift arms within a comfortable range without shrugging."
+      "Adjust the seat so the upper-arm pads line up with your shoulders.",
+      "Press outward and upward against the pads until your upper arms approach shoulder height.",
+      "Lower slowly while staying against the back support."
     ],
     "alternative_exercise_ids": [
       "db_lateral_raise"
@@ -1244,6 +1249,1810 @@
     "logging": {
       "unit": "kg",
       "load_kind": "machine_or_total_load"
+    }
+  },
+  {
+    "id": "plank",
+    "name": "Forearm plank",
+    "name_de": "Unterarmstütz",
+    "primary_muscles": [
+      "core",
+      "shoulders"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Keep ribs stacked over your pelvis and avoid arching the back.",
+      "Breathe normally; finish when you can no longer hold good alignment."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "plank"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "side_plank",
+    "name": "Side plank",
+    "name_de": "Seitstütz",
+    "primary_muscles": [
+      "obliques",
+      "core"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Stack the shoulders and hips and keep your trunk straight.",
+      "Change sides each set and stop if the shoulder feels painful."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "side-plank"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "dead_bug",
+    "name": "Dead bug",
+    "name_de": "Dead Bug",
+    "primary_muscles": [
+      "core"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Keep the lower back supported without forcing it flat.",
+      "Extend opposite arm and leg slowly; breathe out as you reach."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "dead-bug"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "bird_dog",
+    "name": "Bird dog",
+    "name_de": "Diagonalstrecken im Vierfüßlerstand",
+    "primary_muscles": [
+      "core",
+      "back",
+      "glutes"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Keep your pelvis steady on hands and knees.",
+      "Reach opposite arm and leg without twisting through the torso."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "bird-dog"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "bicycle_crunch",
+    "name": "Bicycle crunch",
+    "name_de": "Fahrrad-Crunch",
+    "primary_muscles": [
+      "abs",
+      "obliques"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Rotate gently from your rib cage, not your neck.",
+      "Extend the opposite leg in control, breathing out on each turn."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "bicycle-crunch"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "reverse_crunch",
+    "name": "Reverse crunch",
+    "name_de": "Reverse Crunch",
+    "primary_muscles": [
+      "abs"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Roll the pelvis slightly upward rather than swinging the legs.",
+      "Keep the movement small and lower under control."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "reverse-crunches"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "hanging_knee_raise",
+    "name": "Hanging knee raise",
+    "name_de": "Hängendes Knieheben",
+    "primary_muscles": [
+      "abs",
+      "hip_flexors"
+    ],
+    "equipment": "Pull-up bar",
+    "level": "beginner",
+    "instructions": [
+      "Start with still shoulders and avoid swinging.",
+      "Lift knees toward your torso, then lower slowly."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "hanging-knee-raise"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "cable_crunch",
+    "name": "Kneeling cable crunch",
+    "name_de": "Kabel-Crunch kniend",
+    "primary_muscles": [
+      "abs"
+    ],
+    "equipment": "Cable station",
+    "level": "beginner",
+    "instructions": [
+      "Keep hips mostly fixed as the rib cage curls toward the pelvis.",
+      "Move slowly and avoid pulling with the arms."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "cable-crunch"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "pallof_press",
+    "name": "Cable Pallof press",
+    "name_de": "Pallof-Press am Kabel",
+    "primary_muscles": [
+      "core",
+      "obliques"
+    ],
+    "equipment": "Cable station",
+    "level": "beginner",
+    "instructions": [
+      "Stand sideways to the cable with soft knees.",
+      "Press hands forward without allowing the torso to rotate."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "cable-pallof-press"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "mountain_climbers",
+    "name": "Mountain climbers",
+    "name_de": "Mountain Climbers",
+    "primary_muscles": [
+      "core",
+      "conditioning"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Keep hands under shoulders and maintain a firm trunk.",
+      "Drive knees forward at a speed that preserves your position."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "mountain-climbers"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "ab_wheel",
+    "name": "Ab wheel rollout",
+    "name_de": "Bauchroller",
+    "primary_muscles": [
+      "abs",
+      "core"
+    ],
+    "equipment": "Ab wheel",
+    "level": "beginner",
+    "instructions": [
+      "Brace the abdomen and keep the pelvis from tipping forward.",
+      "Roll only as far as you can return with control."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "ab-wheel-rollout"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "hollow_hold",
+    "name": "Hollow body hold",
+    "name_de": "Hollow-Body-Hold",
+    "primary_muscles": [
+      "abs",
+      "core"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Keep your lower ribs down and spine supported.",
+      "Bend your knees or keep arms by your sides to reduce difficulty."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "hollow-body-hold"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "russian_twist",
+    "name": "Russian twist",
+    "name_de": "Russian Twist",
+    "primary_muscles": [
+      "obliques",
+      "abs"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Sit tall with a braced trunk and relaxed shoulders.",
+      "Rotate gently from the torso without jerking side to side."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "russian-twist"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "standing_quad_stretch",
+    "name": "Standing quadriceps stretch",
+    "name_de": "Quadrizeps-Dehnung stehend",
+    "primary_muscles": [
+      "quadriceps"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Stand near a support and keep your knees close together.",
+      "Move gently until a comfortable stretch; repeat the other side."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "standing-quad-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "bench_hamstring_stretch",
+    "name": "Hamstring stretch on bench",
+    "name_de": "Beinrückseite an der Bank dehnen",
+    "primary_muscles": [
+      "hamstrings"
+    ],
+    "equipment": "Bench",
+    "level": "beginner",
+    "instructions": [
+      "Rest one heel on the bench and keep your back long.",
+      "Hinge a little at the hips; do not bounce."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "bench-hamstring-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "bench_couch_stretch",
+    "name": "Couch stretch",
+    "name_de": "Couch-Stretch",
+    "primary_muscles": [
+      "hip_flexors",
+      "quadriceps"
+    ],
+    "equipment": "Bench",
+    "level": "beginner",
+    "instructions": [
+      "Pad the knee and adopt a comfortable upright position.",
+      "Keep hips square; ease off if the knee feels strained."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "bench-couch-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "pigeon_stretch",
+    "name": "Pigeon stretch",
+    "name_de": "Taube-Dehnung",
+    "primary_muscles": [
+      "glutes",
+      "hip_rotators"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Support your hips with a cushion if needed.",
+      "Use a pain-free range and avoid forcing the front knee."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "pigeon-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "childs_pose",
+    "name": "Child's pose",
+    "name_de": "Kindhaltung",
+    "primary_muscles": [
+      "back",
+      "hips"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Reach the arms forward and breathe into the back.",
+      "Widen knees or use a cushion to stay comfortable."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "childs-pose"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "cat_cow",
+    "name": "Cat–cow mobility",
+    "name_de": "Katze-Kuh-Mobilisation",
+    "primary_muscles": [
+      "spine",
+      "mobility"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Begin on hands and knees with shoulders relaxed.",
+      "Move slowly through a comfortable arch and round, breathing steadily."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "cat-cow"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "doorway_chest_stretch",
+    "name": "Doorway chest stretch",
+    "name_de": "Brustdehnung im Türrahmen",
+    "primary_muscles": [
+      "chest",
+      "shoulders"
+    ],
+    "equipment": "Doorway",
+    "level": "beginner",
+    "instructions": [
+      "Place forearm against a doorway below shoulder height.",
+      "Step forward gradually without straining your shoulder."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "doorway-chest-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "thread_needle",
+    "name": "Thread the needle",
+    "name_de": "Einfädeln im Vierfüßlerstand",
+    "primary_muscles": [
+      "upper_back",
+      "mobility"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "From all fours, reach one arm under your body.",
+      "Let the upper back rotate while hips stay reasonably steady."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "thread-the-needle"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "cobra_stretch",
+    "name": "Gentle cobra stretch",
+    "name_de": "Sanfte Kobra-Dehnung",
+    "primary_muscles": [
+      "abs",
+      "back"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Support yourself on forearms or hands as comfortable.",
+      "Keep shoulders relaxed; avoid pinching the lower back."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "cobra-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "seated_spinal_twist",
+    "name": "Seated spinal twist",
+    "name_de": "Sitzende Wirbelsäulendrehung",
+    "primary_muscles": [
+      "spine",
+      "mobility"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Sit tall and turn from the upper body.",
+      "Keep the movement gentle and avoid yanking the knee."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "seated-spinal-twist"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "butterfly_stretch",
+    "name": "Butterfly stretch",
+    "name_de": "Schmetterlingsdehnung",
+    "primary_muscles": [
+      "adductors",
+      "hips"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Bring soles together and sit on a folded towel if needed.",
+      "Let knees drop naturally; do not press them down."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "butterfly-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "cross_body_shoulder",
+    "name": "Cross-body shoulder stretch",
+    "name_de": "Schulterdehnung über Kreuz",
+    "primary_muscles": [
+      "shoulders"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Draw one arm lightly across the chest.",
+      "Keep shoulder low and avoid stretching into sharp pain."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "cross-body-shoulder-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "downward_dog",
+    "name": "Downward-facing dog",
+    "name_de": "Herabschauender Hund",
+    "primary_muscles": [
+      "hamstrings",
+      "calves",
+      "shoulders"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Press through hands and keep your spine long.",
+      "Bend knees if needed; do not force heels to the floor."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "downward-dog"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "kneeling_hip_flexor",
+    "name": "Kneeling hip flexor stretch",
+    "name_de": "Hüftbeuger-Dehnung kniend",
+    "primary_muscles": [
+      "hip_flexors"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Pad the back knee and gently tuck the pelvis.",
+      "Shift forward slightly until you feel a front-of-hip stretch."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "kneeling-hip-flexor-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "standing_calf_stretch",
+    "name": "Standing calf stretch",
+    "name_de": "Wadendehnung stehend",
+    "primary_muscles": [
+      "calves"
+    ],
+    "equipment": "Wall",
+    "level": "beginner",
+    "instructions": [
+      "Put one foot behind with heel on the floor.",
+      "Keep the rear knee straight and lean forward gently."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "standing-calf-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "bodyweight_squat",
+    "name": "Bodyweight squat",
+    "name_de": "Kniebeuge ohne Gewichte",
+    "primary_muscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Keep your whole foot planted and sit between your knees.",
+      "Stand up smoothly without letting knees collapse inward."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "bodyweight-squat"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "reverse_lunge",
+    "name": "Reverse lunge",
+    "name_de": "Rückwärts-Ausfallschritt",
+    "primary_muscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Step back with enough distance to keep balance.",
+      "Lower vertically and push through the front leg to return."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "reverse-lunge"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "glute_bridge",
+    "name": "Glute bridge",
+    "name_de": "Glute Bridge",
+    "primary_muscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Lie on your back with feet hip-width apart.",
+      "Lift hips using your glutes without arching your lower back."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "glute-bridge"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "step_ups",
+    "name": "Step-ups",
+    "name_de": "Step-ups auf Erhöhung",
+    "primary_muscles": [
+      "glutes",
+      "quadriceps"
+    ],
+    "equipment": "Bench/step",
+    "level": "beginner",
+    "instructions": [
+      "Choose a stable step at a comfortable height.",
+      "Drive through the leading foot and step down under control."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "step-ups"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "walking_lunge",
+    "name": "Walking lunges",
+    "name_de": "Gehende Ausfallschritte",
+    "primary_muscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Take an easy, stable step forward.",
+      "Lower under control; keep your trunk upright."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "walking-lunge"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "bear_crawl",
+    "name": "Bear crawl",
+    "name_de": "Bärenlauf",
+    "primary_muscles": [
+      "core",
+      "shoulders",
+      "conditioning"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Hover knees just above the ground with a neutral spine.",
+      "Take small opposite-hand/foot steps without rocking side to side."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "bear-crawl"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "superman",
+    "name": "Superman floor raise",
+    "name_de": "Superman in Bauchlage",
+    "primary_muscles": [
+      "back",
+      "glutes"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Lie face down with arms stretched out in front.",
+      "Raise arms, chest and legs slightly at the same time, pause, then lower.",
+      "Repeat slowly without arching excessively through the back."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "superman"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "burpees",
+    "name": "Burpees",
+    "name_de": "Burpees",
+    "primary_muscles": [
+      "conditioning",
+      "full_body"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "From standing, squat and place your hands on the floor.",
+      "Step or hop your feet back to a plank, then return to standing.",
+      "Add a jump if comfortable; the illustration shows a standard burpee rather than a step-back variation."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "burpees"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "jump_squat",
+    "name": "Jump squat",
+    "name_de": "Sprung-Kniebeuge",
+    "primary_muscles": [
+      "quadriceps",
+      "glutes",
+      "conditioning"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Use a shallow, comfortable squat before the jump.",
+      "Land softly with bent knees; skip jumping if joints object."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "jump-squat"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "wall_sit",
+    "name": "Wall sit",
+    "name_de": "Wandsitz",
+    "primary_muscles": [
+      "quadriceps",
+      "glutes"
+    ],
+    "equipment": "Wall",
+    "level": "beginner",
+    "instructions": [
+      "Slide down the wall to a comfortable knee angle.",
+      "Breathe steadily and stop if knee pain develops."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "wall-sit"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "inchworm",
+    "name": "Inchworm walkout",
+    "name_de": "Inchworm Walkout",
+    "primary_muscles": [
+      "core",
+      "hamstrings",
+      "shoulders"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Hinge forward and walk hands out into a plank.",
+      "Keep hips steady as you walk back toward your feet."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "inchworm"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "glute_kickback",
+    "name": "Glute kickback (floor)",
+    "name_de": "Glute Kickback am Boden",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Keep the pelvis level on hands and knees.",
+      "Press one heel back and up without arching your spine."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "glute-kickback"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "hip_abduction",
+    "name": "Machine hip abduction",
+    "name_de": "Hüftabduktion am Gerät",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "equipment": "Hip abduction machine",
+    "level": "beginner",
+    "instructions": [
+      "Sit upright in the hip abduction machine with the pads outside your thighs.",
+      "Open your thighs against the resistance without leaning or bouncing.",
+      "Return with control, without letting the weight stack slam."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "hip-abduction"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "cable_pull_through",
+    "name": "Cable pull-through",
+    "name_de": "Kabel-Pull-Through",
+    "primary_muscles": [
+      "glutes",
+      "hamstrings"
+    ],
+    "equipment": "Cable station",
+    "level": "beginner",
+    "instructions": [
+      "Face away from a low cable with feet planted.",
+      "Hinge back at the hips, then stand by squeezing glutes."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "cable-pull-through"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "sumo_squat",
+    "name": "Dumbbell sumo squat",
+    "name_de": "Sumo-Kniebeuge mit Kurzhantel",
+    "primary_muscles": [
+      "glutes",
+      "quadriceps",
+      "adductors"
+    ],
+    "equipment": "Dumbbell",
+    "level": "beginner",
+    "instructions": [
+      "Stand wide with toes slightly turned out and hold a dumbbell vertically between your legs.",
+      "Bend your knees in line with the toes and lower into a comfortable squat.",
+      "Stand tall again without rounding the lower back."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "db-sumo-squat"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "high_foot_leg_press",
+    "name": "High-foot leg press",
+    "name_de": "Beinpresse hoher Fußstand",
+    "primary_muscles": [
+      "glutes",
+      "hamstrings",
+      "quadriceps"
+    ],
+    "equipment": "Leg press",
+    "level": "beginner",
+    "instructions": [
+      "Place feet higher while keeping full foot contact.",
+      "Lower only as far as your pelvis stays supported."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "high-foot-leg-press"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "single_leg_hip_thrust",
+    "name": "Single-leg hip thrust",
+    "name_de": "Einbeiniger Hip Thrust",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "equipment": "Bench",
+    "level": "beginner",
+    "instructions": [
+      "Keep hips level with one foot firmly on the floor.",
+      "Drive through the heel and avoid rotating the pelvis."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "single-leg-hip-thrust"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "smith_hip_thrust",
+    "name": "Smith machine hip thrust",
+    "name_de": "Hip Thrust an der Multipresse",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "equipment": "Smith machine",
+    "level": "beginner",
+    "instructions": [
+      "Place the upper back securely against a bench.",
+      "Drive hips upward and avoid overextending at the top."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "smith-machine-hip-thrust"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "cable_kickback",
+    "name": "Cable glute kickback",
+    "name_de": "Glute Kickback am Kabel",
+    "primary_muscles": [
+      "glutes"
+    ],
+    "equipment": "Cable station",
+    "level": "beginner",
+    "instructions": [
+      "Set an ankle cuff at the lowest pulley position.",
+      "Extend the hip slightly without arching your lumbar spine."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "cable-kickback"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "rowing_machine",
+    "name": "Rowing machine",
+    "name_de": "Ruderergometer",
+    "primary_muscles": [
+      "cardio",
+      "full_body"
+    ],
+    "equipment": "Rowing ergometer",
+    "level": "beginner",
+    "instructions": [
+      "Drive first through the legs, then lean slightly and pull.",
+      "Recover arms, torso and then knees; keep breathing evenly."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "rowing-machine"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "jumping_jacks",
+    "name": "Jumping jacks",
+    "name_de": "Hampelmann",
+    "primary_muscles": [
+      "conditioning",
+      "full_body"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Jump or step your feet apart while bringing your arms overhead.",
+      "Return feet and arms to the starting position in a controlled rhythm.",
+      "A step-out is a lower-impact alternative; the illustration depicts the standard jumping movement."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "jumping-jacks"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "jump_rope",
+    "name": "Jump rope",
+    "name_de": "Seilspringen",
+    "primary_muscles": [
+      "conditioning",
+      "calves"
+    ],
+    "equipment": "Jump rope",
+    "level": "beginner",
+    "instructions": [
+      "Keep elbows close and turn the rope with your wrists.",
+      "Make soft, small jumps, or mimic the movement without a rope."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "jump-rope"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "high_knees",
+    "name": "High knees",
+    "name_de": "Kniehebelauf",
+    "primary_muscles": [
+      "conditioning",
+      "hip_flexors"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Stand tall and lift alternating knees toward hip height, pumping your arms.",
+      "Quickly switch legs while staying upright and landing gently.",
+      "March in place as a lower-impact alternative; the illustration depicts the faster drill."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "high-knees"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "stationary_bike",
+    "name": "Stationary bike",
+    "name_de": "Ergometer-Radfahren",
+    "primary_muscles": [
+      "cardio"
+    ],
+    "equipment": "Stationary bike",
+    "level": "beginner",
+    "instructions": [
+      "Set saddle height so knees remain slightly bent at the bottom.",
+      "Pedal at a pace where breathing is controlled."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "stationary-bike"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "air_bike",
+    "name": "Air bike",
+    "name_de": "Air Bike",
+    "primary_muscles": [
+      "cardio",
+      "full_body"
+    ],
+    "equipment": "Air bike",
+    "level": "beginner",
+    "instructions": [
+      "Adjust the seat and keep shoulders relaxed.",
+      "Use legs and handles smoothly; reduce effort when breathing hard."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "air-bike"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "stair_climber",
+    "name": "Stair climber",
+    "name_de": "Stepper / Treppensteiger",
+    "primary_muscles": [
+      "cardio",
+      "glutes"
+    ],
+    "equipment": "Stair climber",
+    "level": "beginner",
+    "instructions": [
+      "Step upright using the rails lightly for balance.",
+      "Start with a sustainable pace instead of sprinting."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "stair-climber"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "suitcase_carry",
+    "name": "Suitcase carry",
+    "name_de": "Koffertragen einarmig",
+    "primary_muscles": [
+      "core",
+      "grip"
+    ],
+    "equipment": "Dumbbell/kettlebell",
+    "level": "beginner",
+    "instructions": [
+      "Carry a weight in one hand and stand tall.",
+      "Walk without leaning to the loaded side; change hands."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "suitcase-carry"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
+    }
+  },
+  {
+    "id": "kettlebell_swing",
+    "name": "Kettlebell swing",
+    "name_de": "Kettlebell Swing",
+    "primary_muscles": [
+      "glutes",
+      "hamstrings",
+      "conditioning"
+    ],
+    "equipment": "Kettlebell",
+    "level": "beginner",
+    "instructions": [
+      "Hinge at the hips; keep the kettlebell close.",
+      "Snap hips forward without lifting with the shoulders; learn the technique first."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "kettlebell-swing"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "single_leg_rdl",
+    "name": "Single-leg Romanian deadlift",
+    "name_de": "Einbeiniges rumänisches Kreuzheben",
+    "primary_muscles": [
+      "hamstrings",
+      "glutes",
+      "balance"
+    ],
+    "equipment": "Dumbbell or bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Keep hips square while reaching the free leg back.",
+      "Hinge only as far as you can stay balanced and steady."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "single-leg-romanian-deadlift"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "step_up_balance",
+    "name": "Step-up to balance",
+    "name_de": "Step-up mit Balance",
+    "primary_muscles": [
+      "glutes",
+      "quadriceps",
+      "balance"
+    ],
+    "equipment": "Low step",
+    "level": "beginner",
+    "instructions": [
+      "Choose a low stable platform and keep your trunk tall.",
+      "Step up, briefly balance, then lower slowly."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "step-up-to-balance"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "machine_or_total_load",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "cossack_squat",
+    "name": "Cossack squat",
+    "name_de": "Kosaken-Kniebeuge",
+    "primary_muscles": [
+      "adductors",
+      "glutes",
+      "mobility"
+    ],
+    "equipment": "Bodyweight",
+    "level": "beginner",
+    "instructions": [
+      "Move sideways into a comfortable hip hinge.",
+      "Keep the working foot grounded and reduce depth as needed."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "cossack-squat"
+    },
+    "logging": {
+      "unit": "kg",
+      "load_kind": "bodyweight",
+      "mode": "reps"
+    }
+  },
+  {
+    "id": "worlds_greatest_stretch",
+    "name": "World's greatest stretch",
+    "name_de": "World's Greatest Stretch",
+    "primary_muscles": [
+      "hips",
+      "upper_back",
+      "mobility"
+    ],
+    "equipment": "Mat",
+    "level": "beginner",
+    "instructions": [
+      "Take a long lunge with hands supported on the floor.",
+      "Rotate gently toward the front leg; switch sides."
+    ],
+    "alternative_exercise_ids": [],
+    "equipment_at_thomaskirche": "individual_machine_unverified",
+    "media": {
+      "status": "pending_licensing_and_anatomy_review",
+      "start_image": null,
+      "end_image": null,
+      "source": null,
+      "credit": null,
+      "catalog_id": "worlds-greatest-stretch"
+    },
+    "logging": {
+      "unit": "seconds",
+      "load_kind": "bodyweight",
+      "mode": "time"
     }
   }
 ]

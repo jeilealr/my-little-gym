@@ -1,0 +1,10 @@
+{
+  "catalog_schema": 1,
+  "version": 2,
+  "published_at": "2026-10-28",
+  "name": "My Little Gym shared library",
+  "categories": "categories.json",
+  "exercises": "exercises.json",
+  "routines": "routines.json",
+  "notes": "Pull-only shared catalog. Personal data is never sent to GitHub."
+}

@@ -3,24 +3,105 @@
     "id": "chest",
     "display_name": "Chest",
     "color": "#F7DFE8",
-    "sort_order": 1
+    "sort_order": 1,
+    "group": "strength"
   },
   {
     "id": "legs",
     "display_name": "Legs",
     "color": "#E2F0DE",
-    "sort_order": 2
+    "sort_order": 2,
+    "group": "strength"
   },
   {
     "id": "back",
     "display_name": "Back",
     "color": "#E5E9FA",
-    "sort_order": 3
+    "sort_order": 3,
+    "group": "strength"
   },
   {
     "id": "arms_shoulders",
     "display_name": "Arms & Shoulders",
     "color": "#FFEBD3",
-    "sort_order": 4
+    "sort_order": 4,
+    "group": "strength"
+  },
+  {
+    "id": "full_body",
+    "display_name": "Full Body",
+    "color": "#EEE5FA",
+    "sort_order": 5,
+    "group": "flexible"
+  },
+  {
+    "id": "upper_body",
+    "display_name": "Upper Body",
+    "color": "#E2E9F9",
+    "sort_order": 6,
+    "group": "flexible"
+  },
+  {
+    "id": "lower_body",
+    "display_name": "Lower Body",
+    "color": "#E3F1E7",
+    "sort_order": 7,
+    "group": "flexible"
+  },
+  {
+    "id": "abs_core",
+    "display_name": "Abs & Core",
+    "color": "#FBEAD6",
+    "sort_order": 8,
+    "group": "targeted"
+  },
+  {
+    "id": "stretch_mobility",
+    "display_name": "Stretching & Mobility",
+    "color": "#E6F4F0",
+    "sort_order": 9,
+    "group": "recovery"
+  },
+  {
+    "id": "bodyweight",
+    "display_name": "Bodyweight / No Equipment",
+    "color": "#F9E6EF",
+    "sort_order": 10,
+    "group": "flexible"
+  },
+  {
+    "id": "push",
+    "display_name": "Push",
+    "color": "#F9DFE4",
+    "sort_order": 11,
+    "group": "strength"
+  },
+  {
+    "id": "pull",
+    "display_name": "Pull",
+    "color": "#E5ECFA",
+    "sort_order": 12,
+    "group": "strength"
+  },
+  {
+    "id": "glutes",
+    "display_name": "Glutes",
+    "color": "#E9EAD8",
+    "sort_order": 13,
+    "group": "targeted"
+  },
+  {
+    "id": "conditioning",
+    "display_name": "Cardio & Conditioning",
+    "color": "#FFF0D5",
+    "sort_order": 14,
+    "group": "conditioning"
+  },
+  {
+    "id": "functional_balance",
+    "display_name": "Functional Strength & Balance",
+    "color": "#E8E6F7",
+    "sort_order": 15,
+    "group": "mixed"
   }
 ]

@@ -85,3 +85,7 @@ a {color:#a83366}
 .missing-exercises .list-row{padding:9px;min-height:44px}
 .missing-exercises .list-row .card-copy{font-size:13px}
 @media(max-width:360px){.history-pill{padding:8px 9px;font-size:11px}.history-bars{gap:3px}.bar-column small{font-size:9px}}
+
+/* Version 0.2: clean library groups and second-based logging. */
+.library-group-heading{font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:.1em;color:#9d8192;margin:20px 3px 10px}
+.set-header.timed,.set-line.timed{grid-template-columns:35px 1fr 39px}
